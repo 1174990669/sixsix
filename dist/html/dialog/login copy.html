@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录弹框</title>
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/layui/css/layui.css" />
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/css/animate.min.css">
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/css/intlTelInput.css">
+    <link rel="stylesheet" href="http://static.dev.3d66.com/yutu/dist/css/login.css" />
+</head>
+
+<body>
+
+    <div class="login-dialog layui-layer-wrap" id="telLoginDialog" style="">
+        <!-- 广告位 -->
+        <div class="normal-imgs focus66 sysFocusImgSing" data-id="0000">
+            <a href="/" rel="nofollow" target="_blank">
+                <img src="http://static.dev.3d66.com/yutu/images/dialog/test.png" alt="">
+            </a>
+        </div>
+        <div class="login-container">
+            <div class="switch-way js_ChangeLoginWay">
+                <span class="account-way-icon"></span>
+                <span class="code-way-icon"></span>
+            </div>
+
+            <div class="login-header">
+                <ul class="js_LoginChange">
+                    <li data-type="login" class="active"><a>登录</a></li>
+                    <li data-type="register"><a>注册</a></li>
+                    <div class="nav-slide-bar" id="navSlideBar" style="left: 0px; top: 54px; opacity: 1; width: 36px;">
+                    </div>
+                </ul>
+            </div>
+            <div class="js_LoginBlock">
+                <!-- 手机号登录 -->
+                <div class="tel-login-content">
+                    <form class="login-form">
+                        <div class="item-input">
+                            <input class="input-tel" name="loginNum" id="telNumber" type="text" placeholder="手机号/用户名"
+                                data-value="" data-area="CN" autocomplete="off"
+                                onkeyup="value=value.replace(/\D+/g,'')">
+                        </div>
+                        <div class="item-input">
+                            <input type="password" name="loginPwd" id="password" class="input-pwd" placeholder="密码"
+                                maxlength="16" autocomplete="new-password">
+                            <!-- 控制显示隐藏密码 -->
+                            <i data-pwd="0" class="eye-icon passwordActive"></i>
+                        </div>
+                        <div class="login-operation">
+                            <div class="login-register">
+                                <a class="gotoCellphone">验证码登录</a>
+                            </div>
+                            <div class="login-forget">
+                                <a class="forget-pwd">忘记密码</a>
+                            </div>
+                        </div>
+
+                        <div class="login-btn">
+                            <a class="login-a" id="loginBtn">登录</a>
+                            <input type="hidden" name="login_type" value="phone_code">
+                            <input type="hidden" name="login_source" value="">
+                        </div>
+
+                    </form>
+                    <!-- 第三方账号登录 -->
+                    <div class="other-login-block">
+                        <p class="tips">第三方账号登录</p>
+                        <div class="way-lists">
+                            <a class="wechat-login"></a>
+                            <a href="" class="qq-login"></a>
+                        </div>
+                        <p class="bottom">注册和登录即代表您已同意 《羽兔网用户协议》</p>
+                    </div>
+                </div>
+                <!-- 二维码登录 -->
+                <div class="qrcode-login-content" style="display: none;">
+                    <div class="qrcode-block">
+                        <div class="login-qrcode-wrap">
+                            <!-- 测试模拟二维码 -->
+                            <canvas width="190" height="190" style="background-color: #999;"></canvas>
+                        </div>
+                        <p>
+                            请使用微信扫描二维码登录<br>立即学习！
+                        </p>
+                    </div>
+                    <div class="way-lists">
+                        <a href="" class="a-text">手机号登录</a>
+                        <span class="vertical-line"></span>
+                        <a href="" class="a-text">QQ号登录</a>
+                    </div>
+                    <p class="bottom">注册和登录即代表您已同意 《羽兔网用户协议》</p>
+                </div>
+            </div>
+            <!-- 注册页面 -->
+            <div class="js_RegisterBlock" style="display: none;">
+                <!-- 账号注册 -->
+                <div class="tel-register-content">
+                    <form class="register-form">
+                        <!-- 账号 -->
+                        <div class="item-input">
+                            <input class="input-tel" name="registerNum" id="registerNum" type="text"
+                                placeholder="手机号/用户名" data-value="" data-area="CN" autocomplete="off">
+                        </div>
+                        <!-- 获取验证码 -->
+                        <div class="item-input">
+                            <div class="get-code-wrap">
+                                <input class="input-code" type="text" name="registerCode" id="registerCode"
+                                    placeholder="输入验证码" autocomplete="off">
+                                <div class="btn-get js_GetTelcode" id="sendYzm"><span>获取验证码</span></div>
+                            </div>
+                        </div>
+                        <!-- 设置密码 -->
+                        <div class="item-input">
+                            <input class="input-pwd" type="password" name="registerPwd" id="registerPwd"
+                                placeholder="密码长度6-16位" maxlength="16" autocomplete="new-password">
+                            <!-- 控制显示隐藏密码 -->
+                            <i data-pwd="0" class="eye-icon passwordActive"></i>
+                        </div>
+
+                        <div class="login-yzm-voice">
+                            <p class="yzm-voice-1">未收到短信?&nbsp;尝试<span id="voiceBtn">语音验证码</span></p>
+                            <p class="yzm-voice-2"><b><em class="sendYzmvoice">60s</em></b>后再次获取语音验证码</p>
+                        </div>
+
+                        <div class="register-btn">
+                            <a class="register-a" id="registerBtn">注册</a>
+                        </div>
+
+                    </form>
+                    <!-- 提示信息 -->
+                    <div class="other-tips-block">
+                        <p class="bottom">注册和登录即代表您已同意 《羽兔网用户协议》</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="http://static.dev.3d66.com/public/js/global/jquery-1.8.3.min.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.cookie.js"></script>
+    <script src="http://static.dev.3d66.com/public/layer/layer.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.placeholder.min.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/intlTelInput.min.js"></script>
+    <!-- 临时js -->
+
+    <!-- 本项目目录下文件 -->
+    <script src="http://static.dev.3d66.com/yutu/dist/js/loginAnimate.js"></script>
+    <script src="http://static.dev.3d66.com/yutu/src/js/login.js">
+
+    </script>
+</body>
+
+</html>

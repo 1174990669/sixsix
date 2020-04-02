@@ -1,0 +1,30 @@
+
+x
+.bg-icon_个人信息 {
+    width: 15px; height: 15px;
+    background: url('css_sprites.png') -46px -47px;
+}
+
+x
+.bg-icon_搜索_ {
+    width: 15px; height: 15px;
+    background: url('css_sprites.png') -84px -10px;
+}
+
+x
+.bg-icon_我的问答 {
+    width: 16px; height: 16px;
+    background: url('css_sprites.png') -10px -47px;
+}
+
+x
+.bg-课程中心 {
+    width: 17px; height: 17px;
+    background: url('css_sprites.png') -10px -10px;
+}
+
+x
+.bg-学习记录 {
+    width: 17px; height: 17px;
+    background: url('css_sprites.png') -47px -10px;
+}

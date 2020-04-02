@@ -1,0 +1,271 @@
+//导入方法
+@import './public/mixin';
+// //通用的
+@import './public/animate';
+
+.new-rightbar-wrapper {
+	// display: none;
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 40px;
+	margin-top: 0px;
+	z-index: 999;
+	width: 50px;
+	border-radius: 4px;
+	background: transparent;
+	// box-shadow: 0px 0px 6px 0px rgba(4, 0, 0, 0.08);
+
+	>li {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		cursor: pointer;
+		margin: 10px 0;
+		width: 50px;
+		height: 54px;
+		box-sizing: border-box;
+		text-align: center;
+		background-color: #fff;
+		border-radius: 4px;
+		border: 1px solid #eee;
+
+		&:hover {
+			background-color: $primary-color;
+
+			.text {
+				color: #333;
+			}
+		}
+
+		.icon {
+			margin-bottom: 4px;
+		}
+
+		.text {
+			font-size: 12px;
+			color: #999;
+			transition: all .3s;
+		}
+
+		>a {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+	}
+
+	.prefer-block {
+		&:hover {
+			.icon {
+				background: url(#{$img-dev-url}rightbar.png) -88px -89px;
+			}
+		}
+
+		.icon {
+			width: 16px;
+			height: 16px;
+			background: url(#{$img-dev-url}rightbar.png) -89px -47px;
+
+		}
+	}
+
+	.kefu-block {
+		&:hover {
+			.icon {
+				background: url(#{$img-dev-url}rightbar.png) -10px -50px;
+			}
+
+			.pop-menu {
+				display: block;
+				visibility: visible;
+				opacity: 1;
+				max-width: none;
+				transform: scale(1);
+			}
+
+		}
+
+		.icon {
+			width: 19px;
+			height: 19px;
+			background: url(#{$img-dev-url}rightbar.png) -50px -10px;
+
+		}
+	}
+
+	.feedback-block {
+		&:hover {
+			.icon {
+				background: url(#{$img-dev-url}rightbar.png) -89px -10px;
+			}
+		}
+
+		.icon {
+			width: 18px;
+			height: 17px;
+			background: url(#{$img-dev-url}rightbar.png) -49px -50px;
+
+		}
+	}
+
+	.qqgroup-block {
+		&:hover {
+			.icon {
+				background: url(#{$img-dev-url}rightbar.png) -49px -89px;
+			}
+		}
+
+		.icon {
+			width: 19px;
+			height: 16px;
+			background: url(#{$img-dev-url}rightbar.png) -10px -89px;
+
+		}
+	}
+
+	.gotop-block {
+		height: 60px;
+
+		&:hover {
+			.icon {
+				background: url(#{$img-dev-url}rightbar.png) -127px -75px;
+			}
+		}
+
+		.icon {
+			width: 15px;
+			height: 9px;
+			background: url(#{$img-dev-url}rightbar.png) -127px -46px;
+		}
+	}
+
+	.pop-menu {
+		opacity: 0;
+		border-radius: 4px;
+		width: 245px;
+		height: 279px;
+		box-sizing: border-box;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		background: none;
+		right: 100%;
+		z-index: 9;
+		transition: opacity 0.25s, transform 0.3s;
+		transform: scale(0.01);
+		transform-origin: 100% 95%;
+
+		.kefu-info {
+			position: relative;
+			width: 220px;
+			min-height: 279px;
+			box-shadow: 0px 0px 6px 0px rgba(4, 0, 0, 0.08);
+			border-radius: 4px;
+			background: #fff;
+			white-space: nowrap;
+
+			.arrow {
+				width: 30px;
+				height: 15px;
+				position: absolute;
+				z-index: 99;
+				top: 15px;
+				right: -22px;
+				// transform: translateX(-50%);
+				transform: rotate(90deg);
+				overflow: hidden;
+
+				&::after {
+					content: "";
+					position: absolute;
+					z-index: 99;
+					width: 15px;
+					height: 15px;
+					background: #f7f7f7;
+					transform: translateX(-50%) translateY(50%) rotate(45deg);
+					top: 0;
+					right: 0;
+					box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.6);
+				}
+			}
+
+			>li {}
+
+			.qqbox {
+				padding: 30px;
+				background-color: #f7f7f7;
+				text-align: center;
+
+				>a {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					width: 160px;
+					height: 38px;
+					line-height: 38px;
+					background-color: $primary-color;
+					border-radius: 19px;
+					color: #333;
+					font-size: 14px;
+					transition: all .3s;
+					overflow: hidden;
+					position: relative;
+					z-index: 0;
+					@include animHover();
+				}
+
+			}
+
+			.tell {
+				height: 70px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #fff;
+				border-bottom: 1px solid #eee;
+				font-size: 16px;
+				color: #333;
+			}
+
+			.contact-icon {
+				display: inline-block;
+				margin-right: 7px;
+				width: 16px;
+				height: 16px;
+				background: url(#{$img-dev-url}rightbar.png) -127px -10px;
+			}
+
+			.tell-icon {
+				display: inline-block;
+				margin-right: 9px;
+				width: 20px;
+				height: 20px;
+				background: url(#{$img-dev-url}rightbar.png) -10px -10px;
+			}
+
+			.time-desc {
+				padding-top: 25px;
+
+				>p {
+					line-height: 20px;
+					font-size: 12px;
+					color: #999;
+				}
+
+				.user {
+					margin-bottom: 4px;
+					font-size: 14px;
+					color: #666;
+				}
+			}
+		}
+
+	}
+}

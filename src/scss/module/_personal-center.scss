@@ -1,0 +1,200 @@
+.personal-data-block {
+    padding: 50px 0 56px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .head-block {}
+
+    .input-item {}
+
+    .btn-group{
+        text-align: center;
+        .solid-btn{
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            background-color: $primary-color;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all .3s;
+            &:active{
+                background-color: rgba($color: $primary-color, $alpha: 0.8);
+            }
+        }
+    }
+
+}
+
+.head-block {
+    position: relative;
+    text-align: center;
+    z-index: 9;
+    margin-bottom: 46px;
+
+    .hidden {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        clip: 1px 1px 1px 1px;
+        position: absolute;
+    }
+
+    .round-img {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        border-radius: 50%;
+        cursor: pointer;
+
+        .fileinput {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            display: block;
+        }
+
+        &:hover {
+            .update-tips {
+                display: block;
+            }
+        }
+
+        .avater {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .update-tips {
+            display: none;
+            pointer-events: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 120px;
+            height: 32px;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 32px;
+        }
+    }
+
+    .name {
+        display: block;
+        font-size: 16px;
+        color: #333;
+        margin-top: 15px;
+    }
+
+}
+
+.cropper-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -210px;
+    width: 400px;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 2px;
+
+    .cropper-img {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .btnbox {
+        margin-top: 10px;
+
+        %btn {
+            display: inline-block;
+            padding: 0 30px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .btn-sure {
+            @extend %btn;
+            line-height: 34px;
+            background: $primary-color;
+            color: #fff;
+        }
+
+        .btn-cancel {
+            @extend %btn;
+            line-height: 32px;
+            border: solid 1px #d6d6d6;
+            color: #999;
+        }
+    }
+}
+
+.input-item {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    >label {
+        width: 80px;
+        font-size: 14px;
+        color: #666;
+        margin-right: 20px;
+        text-align: right;
+        position: relative;
+
+        em {
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            width: 6px;
+            height: 6px;
+            background-color: #FF4A3B;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+
+    .text-input {
+        width: 300px;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        border: 1px solid #eee;
+        color: #333;
+        border-radius: 4px;
+        &:focus{
+            border-color: $primary-color;
+        }
+    }
+    .item-select{
+        width: 300px;
+        height: 44px;
+    }
+    .layui-input{
+        border: 1px solid #eee;
+    }
+    .layui-form-select dl dd.layui-this {
+        background-color: $primary-color;
+        color: #333;
+    }
+    .layui-input:focus{
+        border-color:  $primary-color !important;
+    }
+}

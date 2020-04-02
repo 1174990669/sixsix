@@ -1,0 +1,20 @@
+//导入方法
+@import './public/mixin';
+//重设基本样式
+@import './public/reset';
+//通用的
+@import './module/common';
+//通用的mixins区块方法
+@import './mixins/comonStyle';
+@import './public/animate';
+//头部导航样式
+@import './module/soft-nav';
+//查看大图
+@import './module/picture-view';
+//PHP渲染的分页样式
+@import './module/pagination';
+//广告位样式
+@import './module/add-foucs';
+@import './module/soft/soft-detail';
+@import './module/footer';
+

@@ -1,0 +1,10 @@
+//导入方法
+@import './public/mixin';
+//重设基本样式
+@import './public/reset';
+//通用的
+@import './module/common-dialog';
+//通用的mixins区块方法
+@import './mixins/comonStyle';
+@import './public/animate';
+@import './module/login-dialog';

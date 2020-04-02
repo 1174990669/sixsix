@@ -1,0 +1,210 @@
+.video-js.vjs-fluid {
+    width: 100%;
+    height: 100%;
+    // width: 990px;
+    // height: 660px;
+}
+
+.myPlayer-dimensions.vjs-fluid {
+    padding-top: 0 !important;
+}
+
+.video-js {
+    height: 100%;
+
+    // width: 990px;
+    // height: 660px;
+    video:focus {
+        outline: none;
+    }
+}
+
+
+.vjs-has-started .vjs-control-bar {
+    background-color: rgba(73, 87, 101, 0.6);
+    height: 54px;
+}
+
+.vjs-button>.vjs-icon-placeholder:before {
+    line-height: 3;
+}
+
+.vjs-paused .vjs-big-play-button,
+.vjs-paused.vjs-has-started .vjs-big-play-button {
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+}
+
+.vjs-volume-panel .vjs-control .vjs-volume-panel-horizontal {}
+
+.vjs-playback-rate .vjs-playback-rate-value {
+    line-height: 54px;
+}
+
+.vjs-next-panel {
+    cursor: pointer;
+}
+
+.vjs-next-panel>i.iconfont {
+    font-size: 16px;
+    vertical-align: -4px;
+}
+
+.vjs-volume-bar.vjs-slider-vertical {
+    height: 6em;
+}
+
+/* 时间显示 */
+.video-js .vjs-current-time,
+.vjs-no-flex .vjs-current-time {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    padding: 0;
+}
+
+.video-js .vjs-time-divider {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    min-width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.video-js .vjs-duration,
+.vjs-no-flex .vjs-duration {
+    display: block;
+    font-size: 14px;
+    padding: 0;
+    padding-right: 10px;
+    color: #B0C3D8;
+}
+
+.video-js .vjs-remaining-time {
+    display: none;
+}
+
+/* 画质按钮 */
+.qualityStyle .vjs-quality-panel {
+    width: 60px;
+    height: 26px;
+    background: $primary-color;
+    border-radius: 13px;
+    line-height: 0;
+    color: #fff;
+}
+
+.video-js .qualityStyle {
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    line-height: 54px;
+    width: auto;
+}
+
+.qualityStyle .vjs-quality-panel:hover {
+    background: $primary-color;
+}
+
+.video-js .vjs-control:focus,
+.video-js .vjs-control:focus:before,
+.video-js .vjs-control:hover:before {
+    outline: none;
+}
+
+.video-js:focus,
+.vjs-poster:focus {
+    outline: none;
+}
+
+.video-js .vjs-time-control {
+    line-height: 54px;
+}
+
+.video-js .vjs-big-play-button {
+    // display: inline-block;
+
+    // background: url(#{$img-dev-url}other_css_sprites.png) -10px -84px;
+}
+
+.video-js .vjs-big-play-button {
+    //font-size: 0;
+}
+
+.vjs-icon-play::before {
+    //content: '';
+}
+
+/* 新增 */
+.vjs-subs-caps-button {
+    display: none;
+}
+
+.vjs-audio-button,
+.vjs-picture-in-picture-control {
+    display: none;
+}
+
+.video-js .vjs-picture-in-picture-control {
+
+    // display: none;
+    // &#xe683; e683
+    .vjs-icon-placeholder::before {
+        content: '画';
+        font-size: 12px;
+        line-height: 54px;
+    }
+}
+
+.video-js .vjs-seek-to-live-control {
+    display: none;
+}
+
+.vjs-playback-rate .vjs-menu {
+    bottom: 10px;
+}
+
+video:focus {
+    outline: none !important;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+// .video-js .vjs-big-play-button{
+//     border: none !important;
+//     background-color: transparent !important;
+// }
+.vjs-paused .vjs-big-play-button, .vjs-paused.vjs-has-started .vjs-big-play-button{
+    width: 57px;
+    height: 57px;
+    line-height: 57px;
+    background-color: transparent !important;
+    border: .1em solid #fff;
+}
+.vjs-slider-vertical .vjs-volume-level:before{
+    left: -5px;
+}
+.video-js .vjs-volume-vertical{
+    bottom: 6.8em;
+}
+
+.vjs-error .vjs-error-display .vjs-modal-dialog-content{
+    display: none;
+}
+.vjs-error .vjs-error-display:before{
+    display: none;
+    content: '';
+}

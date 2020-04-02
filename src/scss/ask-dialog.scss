@@ -1,0 +1,179 @@
+//导入方法
+@import './public/mixin';
+//重设基本样式
+@import './public/reset';
+//通用的
+@import './module/common-dialog';
+//通用的mixins区块方法
+@import './mixins/comonStyle';
+@import './public/animate';
+
+body,
+html {
+    background-color: transparent;
+}
+
+.ask-dialog-block {
+    width: 720px;
+    height: 594px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 60px;
+    box-sizing: border-box;
+
+
+    .header-block {
+        text-align: center;
+
+        .logo-wrap {
+            font-size: 24px;
+            color: #FFB400;
+
+            >i {
+                margin-right: 8px;
+                vertical-align: -4px;
+                width: 22px;
+                height: 22px;
+                display: inline-block;
+                background: url(#{$img-dev-url}dialog/ask-icon.png) no-repeat center;
+            }
+        }
+
+        >p {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #333;
+
+            >b {
+                font-weight: bold;
+                font-size: 20px;
+                color: #FF5027;
+            }
+        }
+    }
+
+
+}
+
+.ask-form-block {
+    margin-top: 45px;
+
+    .input-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 50px;
+
+        >label {
+            display: inline-block;
+            width: 46px;
+            height: 40px;
+            line-height: 40px;
+            text-align: right;
+            font-size: 16px;
+            color: #333;
+            margin-right: 12px;
+
+            >em {
+                color: #FF5027;
+                margin-right: 3px;
+                vertical-align: -2px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .input-area {
+        width: 538px;
+        position: relative;
+
+        .input-text {
+            font-size: 14px;
+            width: 538px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding-left: 17px;
+            padding-right: 68px;
+            border: 1px solid $primary-color;
+        }
+
+        .tips-nums {
+            font-size: 14px;
+            position: absolute;
+            right: 11px;
+            top: 10px;
+            color: #999;
+
+            >em {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .layui-layedit-tool {
+        border-bottom: none;
+        padding: 0 5px;
+    }
+    .layui-layedit-tool .layui-icon{
+        // margin-bottom: 0;
+        // margin-top: 0;
+    }
+
+    .layui-layedit-iframe {
+        // margin-top: -10px;
+        iframe body {
+            padding: 0 10px;
+        }
+    }
+
+    .popup-foot {
+        position: absolute;
+        right: 19px;
+        bottom: 10px;
+
+        .num-tips {
+            font-size: 14px;
+            color: #999;
+
+            >span {
+                color: $primary-color;
+            }
+        }
+    }
+
+
+    .btn-group {
+        text-align: center;
+
+        .solid-btn {
+            font-size: 18px;
+            color: #312C21;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #FFB400;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                opacity: .85;
+            }
+        }
+    }
+}
+
+.bottom-tips {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+
+    >span {
+        color: $primary-color;
+    }
+}

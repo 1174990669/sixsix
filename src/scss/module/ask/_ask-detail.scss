@@ -1,0 +1,650 @@
+@include rightBlock();
+@include commonLists();
+//执行空的页面样式
+@include emptyBg();
+
+$gray-f0: #f0f0f0;
+$hollow-btn-hover: #EDFDFA;
+$bg-color: #f6f6f6;
+
+body,
+html {
+    background-color: #f6f6f6;
+}
+
+
+
+.detail-content-wrapper {
+    padding-top: 18px;
+    padding-bottom: 60px;
+    @include breadcrumb();
+
+
+
+}
+
+.container-block {
+    margin-top: 18px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .left-block {
+        width: 940px;
+    }
+
+    .right-block {
+        width: 250px;
+    }
+
+}
+
+.header-content-wrap {
+    background-color: #fff;
+    padding: 20px 20px 30px 20px;
+
+    .title {
+        line-height: 1;
+
+        >h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            @include text-truncate();
+        }
+    }
+
+    .info-desc {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #999;
+
+        >span {
+            margin-right: 30px;
+        }
+    }
+}
+
+.ask-content-textarea {
+    margin: 24px 0;
+
+    &.is-collapsed {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        -webkit-transition: color .14s ease-out;
+        transition: color .14s ease-out;
+
+        ~.expand-wrap {
+            display: none;
+        }
+
+        .ask-content-inner {
+            position: relative;
+            // -webkit-transition: max-height .32s cubic-bezier(.95, .05, .795, .035), -webkit-mask-size .22s cubic-bezier(.95, .05, .795, .035);
+            // transition: max-height .32s cubic-bezier(.95, .05, .795, .035), -webkit-mask-size .22s cubic-bezier(.95, .05, .795, .035);
+            // transition: mask-size .22s cubic-bezier(.95, .05, .795, .035), max-height .32s cubic-bezier(.95, .05, .795, .035);
+            // transition: mask-size .22s cubic-bezier(.95, .05, .795, .035), max-height .32s cubic-bezier(.95, .05, .795, .035), -webkit-mask-size .22s cubic-bezier(.95, .05, .795, .035);
+            -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(#1a1a1a), to(transparent));
+            -webkit-mask-image: linear-gradient(#1a1a1a calc(100% - 8rem), transparent calc(100% - 1.8rem));
+            mask-image: -webkit-gradient(linear, left top, left bottom, from(#1a1a1a), to(transparent));
+            mask-image: linear-gradient(#1a1a1a calc(100% - 8rem), transparent calc(100% - 1.8rem));
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
+
+        .ask-content-inner {
+            p {
+                line-height: 22px;
+            }
+        }
+
+        .item-expand-btn {
+            display: block !important;
+        }
+
+    }
+
+    .ask-content-inner {
+        // margin-top: 6px;
+        color: $gray-66;
+        max-height: 120px;
+        // margin-bottom: -4px;
+        overflow: hidden;
+        word-break: break-all;
+
+        img:hover {
+            cursor: zoom-in;
+        }
+    }
+
+    .item-expand-btn {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        color: $primary-color;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+        background: none;
+
+        &:hover {
+            color: $a-hover;
+        }
+    }
+}
+
+.comment-content-textarea {
+    display: none;
+    margin-top: 24px;
+    position: relative;
+    width: 900px;
+
+    .popup-foot {
+        position: absolute;
+        bottom: 20px;
+        z-index: 10;
+        right: 20px;
+        // padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        border-top: none;
+        display: block;
+
+        .answer-submit {
+            position: relative;
+            float: right;
+            top: 0;
+            margin-left: 10px;
+            // margin-right: 5px;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: $primary-color;
+            color: #333;
+            font-size: 14px;
+            transition: all 0.3s;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $a-hover;
+            }
+
+        }
+
+        .num-tips {
+            float: right;
+            color: #999;
+            font-size: 14px;
+
+            >span {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.ask-content-bottom {
+    .ask-btn-group {
+        display: inline-flex;
+        flex: 1 1;
+        vertical-align: middle;
+
+        %btn-style {
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .btn-solid {
+            @extend %btn-style;
+            margin-right: 20px;
+            // @include solidBtn($primary-color, 4px, #333);
+            border: 1px solid #ddd;
+            color: #666;
+
+            &:hover,
+            &.active {
+                color: #333;
+                border-color: $primary-color;
+                background-color: $primary-color;
+            }
+        }
+
+        .btn-hollow {
+            @extend %btn-style;
+            border: 1px solid #ddd;
+            color: #666;
+
+            &:hover,
+            &.active {
+                color: #333;
+                border-color: $primary-color;
+                background-color: $primary-color;
+            }
+        }
+
+    }
+
+}
+
+//通用的广告位刷新换批课程
+@include refreshCourseLists();
+
+
+.ask-content-right {
+    .user-info-wrap {
+        padding-left: 40px;
+
+        .head {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .info-wrap {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px;
+            text-align: left;
+
+            .u-name {
+                color: $gray-33;
+                font-size: 16px;
+                display: block;
+                @include text-truncate();
+                max-width: 200px;
+            }
+
+            .vip-icon {
+                width: 16px;
+                display: inline-block;
+            }
+
+            .zixue-vip-icon {
+                width: 14px;
+                height: auto;
+                display: inline-block;
+            }
+        }
+    }
+
+    .ask-data-wrap {
+        width: 180px;
+        padding-left: 40px;
+        font-size: 0;
+
+        .ask-number-inner {
+            display: inline-block;
+            vertical-align: middle;
+            width: 90px;
+            @include text-truncate();
+            line-height: 1;
+            text-align: center;
+            margin-top: 33px;
+            padding-right: 10px;
+            box-sizing: border-box;
+
+            .item-title-name {
+                font-size: 14px;
+                color: $gray-99;
+                margin-bottom: 10px;
+
+            }
+
+            .item-number {
+                display: inline-block;
+                width: 100%;
+                @include text-truncate();
+                font-size: 18px;
+                color: $gray-33;
+            }
+        }
+    }
+}
+
+
+.comment-content-wrap {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+
+}
+
+//导入软件详情的评论区域样式
+@import '../soft/soft-comment';
+
+.comm-user-wrap {
+    //font-size: 0;
+
+    img {
+        display: inline-block;
+    }
+
+    .head {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .u-name {
+        margin-right: 5px;
+        font-size: 14px;
+        color: $gray-33;
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 200px;
+        @include text-truncate();
+
+    }
+
+    .vip-icon {
+        width: 16px;
+        height: auto;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+    .zixue-vip-icon {
+        width: 14px;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+
+
+//问答内容列表样式
+.answer-lists-wrap {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 0 20px;
+
+    // 展开按钮
+    .other-lists-extend {
+        width: calc(100% + 30px);
+        margin-top: -1px;
+        margin-left: -15px;
+        margin-right: -15px;
+        background-color: $gray-f0;
+
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+
+        @include extendBtn();
+        display: none;
+        float: none;
+        margin-bottom: 0;
+    }
+
+}
+
+.list-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+
+    .list-header-text {
+        margin: 0;
+        flex: 1;
+        font-weight: bold;
+        color: $gray-33;
+        font-size: 14px;
+
+        >span {}
+    }
+}
+
+.list-headerOptions {
+    width: 82px;
+    font-size: 14px;
+
+    .popover {
+        position: relative;
+        display: inline-block;
+
+        .select-sort-button {
+            color: $gray-99;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            height: 40px;
+            align-items: center;
+            line-height: 38px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid transparent;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.popover-content {
+    position: absolute;
+    border: 1px solid $gray-f0;
+    box-shadow: 0px 1px 5px 0px rgba(232, 232, 232, 1);
+    border-radius: 4px;
+    z-index: 199;
+    background-color: #fff;
+    right: -10px;
+    top: -5px;
+    display: none;
+
+    .select-list {
+        overflow: auto;
+        position: relative;
+        max-height: 500px;
+        padding: 8px 0;
+        border-radius: 4px;
+
+        .select-option {
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: $gray-99;
+            text-align: left;
+            background: none;
+            border: none;
+
+            &:hover {
+                background-color: $bg-color;
+            }
+
+            a {
+                display: block;
+                padding: 0 20px;
+                height: 100%;
+                color: inherit;
+            }
+        }
+    }
+}
+
+
+//溜溜问答每行item的样式
+.content-lists-wrap {
+    padding-bottom: 30px;
+
+    .llask-comment-content {
+
+        .ask-content-textarea {
+            margin: 0;
+
+        }
+    }
+
+    .lists-item {
+        display: flex;
+        padding: 30px 15px 0 15px;
+        @include clearfix();
+
+        &.have-adopt {
+            //border-bottom: none;
+            //background-color: $bg-color;
+            border-bottom: 1px dashed $gray-ee;
+            border-radius: 4px;
+            padding-top: 21px;
+
+            .comm-bottom .adopt-wrap {
+                background-color: $primary-color;
+                cursor: not-allowed;
+                color: $white;
+            }
+
+            .right-comment-wrap {
+                border-bottom: none;
+            }
+        }
+
+        .right-comment-wrap {
+            flex: 1;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed $gray-ee;
+        }
+
+        .comment-header {
+            width: 62px;
+
+            .head {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+    }
+
+    .comm-bottom {
+
+        .adopt-wrap {
+            display: inline-block;
+            width: 100px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            margin-right: 33px;
+            box-sizing: border-box;
+            @include solidBtn(#e1f7f3, 4px, $primary-color);
+            //@include hollowBtn($primary-color,4px,1px);
+            // &:hover{
+            //     color: $primary-color;
+            // }
+        }
+
+        .date-time {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 4px;
+            font-size: 12px;
+            color: $gray-99;
+            margin-left: 25px;
+        }
+
+        .right-button {
+            display: none;
+            float: right;
+            padding: 0 16px;
+            font-size: 12px;
+            line-height: 32px;
+            color: $gray-99;
+            background: none;
+            text-align: center;
+            cursor: pointer;
+
+            .is-active {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.svg-flex {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+.llask-comment-content {
+    position: relative;
+
+    // 展开更多回复
+    .expand-wrap {
+        font-size: 14px;
+        color: $gray-99;
+        text-align: left;
+        // position: absolute;
+        // bottom: 45px;
+        margin-top: 15px;
+
+        .expand-answer {
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    //收起回复
+    .fold-answer {
+        display: none;
+        margin-top: 15px;
+        text-align: center;
+
+        >p {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            color: $gray-99;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+}
+
+.relevant-block-lists {
+    margin-top: 20px;
+
+    .header {
+        padding: 30px 20px 20px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+
+        >h3 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            line-height: 1;
+        }
+    }
+}

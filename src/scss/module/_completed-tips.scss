@@ -1,0 +1,615 @@
+.sure-study-dialog {
+	width: 480px;
+	height: 350px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 46px 0;
+	text-align: center;
+	background-color: #fff;
+
+	.title-icon {
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		background: url(#{$img-dev-url}course/sure-icon.png) no-repeat center;
+		background-size: 100% 100%;
+	}
+
+	.sure-content {
+		margin-top: 24px;
+		margin-bottom: 35px;
+
+		>h3 {
+			font-size: 18px;
+			color: #666;
+		}
+
+		>p {
+			color: #999;
+			font-size: 14px;
+			margin-top: 14px;
+			margin-bottom: 24px;
+		}
+
+		>a {
+			color: #FF4A3B;
+			font-size: 16px;
+		}
+	}
+
+	.btn-group {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		%btn-style {
+			width: 120px;
+			height: 44px;
+			text-align: center;
+			line-height: 44px;
+			font-size: 14px;
+			display: inline-block;
+			border-radius: 4px;
+			margin: 0 10px;
+		}
+
+		.solid-gray {
+			@extend %btn-style;
+			color: #999;
+			background-color: #eee;
+			position: relative;
+			cursor: pointer;
+			z-index: 0;
+			overflow: hidden;
+			@include animHover();
+		}
+
+		.solid-btn {
+			@extend %btn-style;
+			color: #333;
+			background-color: $primary-color;
+			position: relative;
+			cursor: pointer;
+			z-index: 0;
+			overflow: hidden;
+			@include animHover();
+		}
+	}
+}
+
+.haved-study-dialog {
+	width: 350px;
+	height: 219px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 48px 0;
+	background-color: #fff;
+
+	.title {
+		line-height: 1;
+		font-size: 18px;
+		color: #666;
+	}
+
+	.desc {
+		line-height: 1;
+		font-size: 14px;
+		color: #999;
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+
+	.solid-btn {
+		width: 150px;
+		height: 44px;
+		text-align: center;
+		line-height: 44px;
+		font-size: 14px;
+		display: inline-block;
+		border-radius: 4px;
+		color: #333;
+		background-color: $primary-color;
+		position: relative;
+		cursor: pointer;
+		z-index: 0;
+		overflow: hidden;
+		@include animHover();
+	}
+}
+
+.video-end-bg {
+	$timer-color: #ff5400;
+	$gray-f0-color: #f0f0f0;
+	display: none;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #1f1f1f;
+	text-align: center;
+	//padding-top: 160px;
+	box-sizing: border-box;
+	line-height: 50px;
+
+	.tips-center-next {
+		width: 100%;
+		height: 300px;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.tips-center-all {
+		width: 100%;
+		height: 258px;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	img {
+		display: inline-block;
+		width: 78px;
+		height: 102px;
+		margin-bottom: 25px;
+	}
+
+	h2 {
+		color: $white;
+		font-size: 18px;
+
+		>span {
+			color: $timer-color;
+		}
+	}
+
+	p {
+		color: $gray-f0-color;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+
+	%btn-style {
+		display: inline-block;
+		box-sizing: border-box;
+		border-radius: 6px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		color: #333;
+		@include transition(all, 0.2s);
+		font-size: 14px;
+
+		.iconfont {
+			margin-right: 10px;
+			font-size: 17px;
+			vertical-align: -2px;
+		}
+	}
+
+	.replay-btn {
+		@extend %btn-style;
+		width: 130px;
+		@include border(1px, solid, $white);
+		margin-right: 50px;
+		color: $primary-color;
+		position: relative;
+		cursor: pointer;
+		z-index: 0;
+		overflow: hidden;
+		@include animHover();
+	}
+
+	.paly-next-btn {
+		@extend %btn-style;
+		width: 150px;
+		background-color: $primary-color;
+
+		position: relative;
+		cursor: pointer;
+		z-index: 0;
+		overflow: hidden;
+		@include animHover();
+	}
+
+	.replay-btn-only {
+		margin: 0 auto;
+		margin-top: 30px;
+		@extend %btn-style;
+		width: 150px;
+		background-color: $primary-color;
+		position: relative;
+		cursor: pointer;
+		z-index: 0;
+		overflow: hidden;
+		@include animHover();
+
+	}
+}
+
+.buy-course-bg {
+	position: absolute;
+	display: none;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #1f1f1f;
+	text-align: center;
+
+	&.show {
+		display: flex;
+	}
+
+	.tips-center-buy {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 250px;
+		margin: auto;
+
+		>h2 {
+			line-height: 1;
+			font-size: 18px;
+			color: #BBBBBB;
+			margin-bottom: 10px;
+		}
+
+		>p {
+			font-size: 12px;
+			color: #7A7A7A;
+		}
+
+		.tips-block {
+			margin: 25px auto 0 auto;
+			width: 350px;
+			height: 180px;
+			background-color: #24282F;
+			border-radius: 4px;
+			font-size: 14px;
+			text-align: left;
+			padding: 27px 39px 0 39px;
+			box-sizing: border-box;
+
+			>p {
+				color: #fff;
+			}
+
+			.price {
+				margin-top: 5px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				>span {
+					>em {
+						font-size: 26px;
+						margin-right: 3px;
+					}
+				}
+
+				>s {
+					color: #50555C;
+				}
+			}
+		}
+
+		.border-red-btn {
+			margin-top: 22px;
+			display: block;
+			width: 270px;
+			height: 44px;
+			line-height: 44px;
+			border-radius: 4px;
+			color: #fff;
+			background-color: #EB4E39;
+			font-size: 14px;
+			text-align: center;
+			cursor: pointer;
+			transition: all .3s;
+
+			&:hover {
+				background-color: #fd583f;
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.vide-free-bg {
+	display: none;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #1f1f1f;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 50px;
+	cursor: pointer;
+	.post-img {
+		display: block;
+		margin: auto;
+		max-height: 100%;
+
+	}
+
+	.play-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -29px;
+		margin-top: -29px;
+		display: block;
+		width: 57px;
+		height: 57px;
+		background: url(#{$img-dev-url}index/icon-play.png);
+	}
+}
+
+/* 需要购买 */
+.video-buy-bg {
+	$timer-color: #ff5400;
+	$gray-f0-color: #e6e5e5;
+	$red-price: #ff0f0f;
+	position: absolute;
+	display: none;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #1f1f1f;
+	text-align: center;
+
+	box-sizing: border-box;
+	line-height: 50px;
+
+	.post-img {
+		display: block;
+		margin: auto;
+		max-height: 100%;
+		cursor: pointer;
+
+	}
+
+	.play-icon {
+		position: absolute;
+		cursor: pointer;
+		top: 50%;
+		left: 50%;
+		margin-left: -29px;
+		margin-top: -29px;
+		display: block;
+		width: 57px;
+		height: 57px;
+		background: url(#{$img-dev-url}index/icon-play.png);
+	}
+	.tips-center-buy {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 360px;
+		margin: auto;
+
+		>img {
+			display: inline-block;
+			width: 77px;
+			height: 95px;
+		}
+
+		>h2 {
+			color: $white;
+			font-size: 18px;
+			//margin-bottom: 10px;
+		}
+
+		>p {
+			color: $gray-f0-color;
+			font-size: 16px;
+		}
+
+		>h1 {
+			color: $red-price;
+			font-size: 30px;
+		}
+	}
+
+	.tips-content-allow {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	%btn-style {
+		display: inline-block;
+		box-sizing: border-box;
+		border-radius: 6px;
+		text-align: center;
+		color: $white;
+		@include transition(all, 0.2s);
+		font-size: 14px;
+
+		.iconfont {
+			margin-right: 10px;
+			font-size: 17px;
+			vertical-align: -2px;
+		}
+	}
+
+	.price-center {
+		margin: 0 auto;
+		//background-color: #1b2027;
+		padding: 10px 0;
+		height: 55px;
+		width: 515px;
+		line-height: 55px;
+		margin-top: 20px;
+		font-size: 0;
+		white-space: nowrap;
+
+		>span {
+			display: inline-block;
+			vertical-align: middle;
+			width: 200px;
+			height: 100%;
+			text-align: center;
+			background-color: #fd583f;
+			color: #ffffff;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.span-tips {
+			font-size: 14px;
+			vertical-align: 2px;
+			font-weight: normal;
+		}
+
+		>p {
+			vertical-align: middle;
+			display: inline-block;
+			width: 278px;
+			height: 100%;
+			padding-left: 20px;
+			box-sizing: border-box;
+			background-color: #252c34;
+			font-size: 14px;
+			color: #aab9cb;
+
+			>span {
+				color: #fd583f;
+				font-size: 24px;
+				margin-left: 10px;
+				margin-right: 15px;
+				display: inline-block;
+				vertical-align: bottom;
+			}
+		}
+
+		.solid-btn {
+			vertical-align: middle;
+			display: inline-block;
+			width: 278px;
+			height: 100%;
+			padding-left: 20px;
+			box-sizing: border-box;
+			border-radius: 4px;
+			background-color: $primary-color;
+			color: #333;
+			font-size: 14px;
+		}
+
+		.j_user-login {
+			padding-left: 0;
+			color: #fff;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	}
+
+	.course-title {
+		line-height: 30px;
+	}
+
+	.buy-btn-groups {
+		padding: 10px 20px;
+		width: 280px;
+		background-color: #1b2027;
+		margin: 0 auto;
+		margin-top: 20px;
+		font-size: 0;
+	}
+
+	%btn-buy {
+		display: inline-block;
+		text-align: center;
+		box-sizing: border-box;
+		cursor: pointer;
+		vertical-align: middle;
+		height: 46px;
+		line-height: 46px;
+		font-size: 14px;
+		border-radius: 4px;
+		padding: 0 20px;
+		-moz-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		transition: all 0.2s;
+	}
+
+	.fill-btn {
+		@extend %btn-buy;
+		background-color: #fd583f;
+		color: #ffffff;
+		margin-right: 50px;
+
+		&:hover {
+			background-color: rgba(253, 88, 63, 0.8);
+		}
+
+		.new-vip-icon-white {
+			margin-right: 4px;
+			margin-bottom: 2px;
+			display: inline-block;
+			vertical-align: middle;
+			width: 15px;
+			height: 16px;
+			background: url(#{$img-dev-url}index_css_sprites.png) -82px -152px;
+		}
+	}
+
+	.border-red-btn {
+		@extend %btn-buy;
+		border: 1px solid #fd583f;
+		color: #fd583f;
+
+		&:hover {
+			background-color: #fd583f;
+			color: #ffffff;
+		}
+	}
+
+	.vip-btn {
+		@extend %btn-style;
+		width: 200px;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 10px;
+		background-color: $primary-color;
+
+		&:hover {
+			background-color: $primary-highlight;
+		}
+	}
+
+	.buy-course-btn {
+		@extend %btn-style;
+		width: 130px;
+		height: 55px;
+		line-height: 55px;
+		@include border(1px, solid, $white);
+
+		&:hover {
+			color: $gray-99;
+			border-color: $gray-99;
+		}
+	}
+}

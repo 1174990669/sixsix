@@ -1,0 +1,246 @@
+//颜色
+$menu-black: #2b333b;
+$gray-f6: #F6F6F6;
+
+
+.bannerSubmenu {
+    background: #fff;
+    position: absolute;
+    left: 164px;
+    top: 0px;
+    width: 740px;
+    height: 400px;
+    z-index: 999;
+    box-shadow: 0px 1px 10px 0px rgba(181, 181, 182, 0.6);
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+
+    &.hide {
+        display: none;
+    }
+
+    .innerBox {
+        background-color: #fff;
+        padding: 5px 30px 20px 30px;
+        position: relative;
+        // min-height: 201px;
+        height: 201px;
+        box-sizing: border-box;
+
+        .subinnerBox {
+            // overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .cates-box {
+            position: relative;
+            margin-top: 15px;
+        }
+
+        .banner-line {
+            line-height: 22px;
+            margin-bottom: 4px;
+
+            span {
+                font-size: 14px;
+                color: $gray-33;
+                letter-spacing: 0;
+                line-height: 22px;
+                font-weight: bold;
+            }
+        }
+
+        .tag-box {
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 52px;
+            overflow: hidden;
+
+            a {
+                margin-bottom: 4px;
+                font-size: 14px;
+                line-height: 22px;
+                margin-right: 24px;
+                display: inline-block;
+            }
+        }
+
+        .more-link {
+            display: none;
+            position: absolute;
+            top: 55px;
+            right: -10px;
+            color: $primary-color;
+            cursor: pointer;
+            font-size: 12px;
+
+            &:hover {
+                color: $primary-highlight;
+            }
+        }
+    }
+
+    .recomment-box {
+        height: 199px;
+        box-sizing: border-box;
+        background-color: $gray-f6;
+        padding: 30px 28px 29px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .banner-course-card {}
+
+    }
+}
+
+.banner-course-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+
+    a {
+        display: flex;
+
+        &:hover {
+            color: $primary-color;
+
+            .dot_samll {
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .course-img {
+        width: 80px;
+        height: 60px;
+        border-radius: 4px;
+    }
+
+    .course-card {
+        margin-left: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: center;
+        align-content: center;
+        width: 247px;
+        font-size: 12px;
+
+        .course-card-name {
+            color: $gray-66;
+            margin-bottom: 9px;
+            max-width: 244px;
+            @include text-truncate();
+
+        }
+
+        .dot_samll {
+            margin: 0 5px;
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: $gray-66;
+        }
+
+        .course-card-desc {
+            color: $gray-66;
+            display: flex;
+            align-items: center;
+
+        }
+    }
+}
+
+// 轮播图上的菜单
+.menuContent {
+    position: relative;
+    z-index: 2;
+    width: 164px;
+    height: 400px;
+    background-color: $menu-black;
+    padding-top: 20px;
+    padding-left: 17px;
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+
+    .menu-header {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        margin-bottom: 14px;
+
+        .all-icon {
+            display: inline-block;
+            background: url(#{$img-dev-url}zixue2.1/menu-sort-icon.png) no-repeat center;
+            width: 13px;
+            height: 13px;
+            background-size: 100% 100%;
+            margin-right: 5px;
+        }
+
+        >span {
+            font-size: 14px;
+            color: $gray-99;
+        }
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+        font-size: 14px;
+        color: $white;
+        height: 42px;
+        line-height: 42px;
+        padding-left: 20px;
+        padding-right: 50px;
+        transition: background-color .3s;
+        cursor: pointer;
+
+        &:hover {
+            .group {
+                color: #fff;
+            }
+
+            .menu-arrow {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        &.active {
+            border-radius: 4px 0 0 4px;
+            background-color: rgba($color: #fff, $alpha: 0.3);
+            .group {
+                color: #fff;
+            }
+            .menu-arrow {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+
+        .group {
+            text-align: right;
+            // width: 70px;
+            @include text-truncate();
+            // width: 56px;
+            overflow: hidden;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .menu-arrow {
+            position: absolute;
+            right: 35px;
+            top: 0px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            color: inherit;
+        }
+    }
+}

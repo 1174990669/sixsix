@@ -1,0 +1,41 @@
+.goods-lists-block {
+    padding: 30px 30px 50px 30px ;
+    .pagination{
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+}
+
+.goods-table {
+    width: 100%;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+
+    thead {
+        background-color: #f7f7f7;
+        text-align: center;
+        tr {
+            height: 40px;
+        }
+        .col-1 {
+            width: 25%;
+            text-align: center;
+        }
+        th {
+            border: 1px solid #eee;
+        }
+    }
+
+    tbody {
+        text-align: center;
+        tr {
+            height: 54px;            
+            transition: all .3s;
+        }
+        td {
+            border: 1px solid #eee;
+        }
+    }
+
+}

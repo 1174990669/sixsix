@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录弹框</title>
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/layui/css/layui.css" />
+    <link rel="stylesheet" href="http://static.dev.3d66.com/yutu/dist/css/ask-dialog.css" />
+</head>
+
+<body>
+
+    <div class="ask-dialog-block" id="askDialog">
+        <div class="header-block">
+            <div class="logo-wrap">
+                <i></i>羽兔问答
+            </div>
+            <p>解决<b>213123</b>个问题</p>
+        </div>
+
+        <div class="ask-form-block">
+            <div class="input-item">
+                <label for="quesTitle">
+                    <em>*</em>问题
+                </label>
+                <div class="input-area">
+                    <input id="quesTitle" class="input-text" maxlength="100" name="question_title" type="text" autocomplete="off"
+                        placeholder="一句话精确说明您的问题，5-100字，以？结尾">
+                    <span class="tips-nums"><em>1</em>/100</span>
+                </div>
+
+            </div>
+            <div class="input-item">
+                <label for="commContentId">补充
+                </label>
+                <div class="input-area">
+                    <textarea id="commContentId" lay-verify="required" placeholder="亲，来说两句呗!"
+                        class="layui-hide"></textarea>
+                    <div class="popup-foot">
+                        <p class="num-tips"><span>0</span>/500</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a class="solid-btn js_SumbitBtn">提问</a>
+            </div>
+        </div>
+
+        <div class="bottom-tips">
+            有新回答后，&nbsp;&nbsp;“<span>个人中心-问答通知</span>”&nbsp;&nbsp;会通知您，请注意查看喔~
+        </div>
+
+    </div>
+
+    <div class="" id="test">test</div>
+
+    <script src="http://static.dev.3d66.com/public/js/global/jquery-1.8.3.min.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.cookie.js"></script>
+    <script src="http://static.dev.3d66.com/public/layer/layer.js"></script>
+    <script src="http://static.dev.3d66.com/yutu/layui/layui.js"></script>
+    <script src="http://static.dev.3d66.com/yutu/dist/js/askDialog.js"></script>
+
+    <script>
+        document.querySelector('#test').addEventListener('click', function (e) {
+     
+            layer.open({
+                type: 2,
+                area: ['720px', '594px'],
+                //maxmin: true,
+                title: false,
+                closeBtn: 2,
+                resize: false,
+                // zIndex: layer.zIndex, 
+                shadeClose: false,
+                skin: 'my-close-skin',
+                content: ['http://static.dev.3d66.com/yutu/src/html/dialog/ask-dialog.html', 'no'],
+                success: function (layero) {
+                    //layer.setTop(layero); 
+                }
+            });
+        })
+    </script>
+
+
+</body>
+
+</html>

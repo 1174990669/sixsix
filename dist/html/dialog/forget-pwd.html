@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录弹框</title>
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/layui/css/layui.css" />
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/css/animate.min.css">
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/css/intlTelInput.css">
+    <link rel="stylesheet" href="http://static.dev.3d66.com/yutu/dist/css/login.css" />
+</head>
+
+<body>
+
+    <div class="login-dialog layui-layer-wrap" id="telLoginDialog">
+        <!-- 广告位 -->
+        <div class="normal-imgs focus66 sysFocusImgSing" data-id="0000">
+            <a href="/" rel="nofollow" target="_blank">
+                <img src="http://static.dev.3d66.com/yutu/images/dialog/test.png" alt="">
+            </a>
+        </div>
+        <div class="login-container">
+            <!-- 绑定手机页面 -->
+            <div class="bind-header-block">
+                <h3 class="title">重置密码</h3>
+                <span class="back-icon js_BackLogin"></span>
+            </div>
+            <div class="bind-tel-content">
+                <form class="bind-form">
+                    <!-- 账号 -->
+                    <div class="item-input">
+                        <input class="input-tel" name="setNum" id="setNum" type="text" placeholder="请输入手机号"
+                            data-value="" data-area="CN" autocomplete="off">
+                    </div>
+                    <!-- 获取验证码 -->
+                    <div class="item-input">
+                        <div class="get-code-wrap">
+                            <input class="input-code" type="text" name="setCode" id="setCode" placeholder="输入验证码"
+                                autocomplete="off">
+                            <div class="btn-get js_GetTelcode" id="sendYzm"><span>获取验证码</span></div>
+                        </div>
+                    </div>
+
+                    <div class="item-input ">
+                        <input type="password" name="setPwd" id="setPwd" class="input-pwd" placeholder="密码"
+                            maxlength="16" autocomplete="new-password">
+                        <!-- 控制显示隐藏密码 -->
+                        <i data-pwd="0" class="eye-icon passwordActive"></i>
+                    </div>
+
+                    <div class="login-yzm-voice">
+                        <p class="yzm-voice-1">未收到短信?&nbsp;尝试<span id="voiceBtn">语音验证码</span></p>
+                        <p class="yzm-voice-2"><b><em class="sendYzmvoice">60s</em></b>后再次获取语音验证码</p>
+                    </div>
+
+                    <div class="bind-btn">
+                        <a class="bind-a" id="setPwdBtn">重置密码</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="set-success-container" style="display: none;">
+            <div class="success-icon"></div>
+            <h2>恭喜您，重置密码成功！</h2>
+            <p>强烈建议经常修改密码，提升安全等级！</p>
+
+            <div class="wrap-btn">
+                <a class="btn-a" id="toLoginBtn">去登陆</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="http://static.dev.3d66.com/public/js/global/jquery-1.8.3.min.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.cookie.js"></script>
+    <script src="http://static.dev.3d66.com/public/layer/layer.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.placeholder.min.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/intlTelInput.min.js"></script>
+    <!-- 临时js -->
+
+    <!-- 本项目目录下文件 -->
+    <script src="http://static.dev.3d66.com/yutu/src/js/forgetPwd.js">
+
+    </script>
+</body>
+
+</html>

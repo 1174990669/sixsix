@@ -1,0 +1,258 @@
+//颜色
+$icon-hover-color: #001944;
+$header-border-color: #EEEEEE;
+$soft-hover: #001944;
+
+@import '../public/list_header';
+
+@function caclMargin($width, $col-width, $n) {
+    //((1300 - 168 * 7) / 6);
+    @return (($width - $col-width * $n) / ($n - 1))
+}
+
+;
+
+//软件集
+.soft-lists-wrap {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 46px;
+    box-sizing: border-box;
+    // margin-bottom: 30px;
+
+    .other-lists-extend {
+        @include extendBtn();
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 10px;
+        
+        // position: absolute;
+        // bottom: 0;
+        // left: calc(50% - 36px);
+        // margin-bottom: 15px;
+    }
+
+    &.expand {
+        .soft-lists {
+            max-height: none;
+            overflow: auto;
+        }
+
+    }
+}
+
+.soft-lists {
+    margin-left: caclMargin(1300px, 168px, 7) * -1;
+    position: relative;
+    max-height: 80px;
+    overflow: hidden;
+
+    >li {
+        margin-left: caclMargin(1300px, 168px, 7);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 168px;
+        height: 60px;
+        box-shadow: 1px 3px 6px 0px rgba(181, 181, 182, 0.5);
+        border-radius: 4px;
+        float: left;
+        cursor: pointer;
+        background: linear-gradient(to left,#fff 50%,#001D26 50%) right bottom / 200% 100%;
+        transition: color,background 0.5s;
+        &:hover {
+            background-position: left bottom !important;
+            // background-color: $soft-hover;
+            //transform: translateY(-5px);
+            // a {
+            //     color: $white;
+            // }
+            span,
+            a {
+                color: $white;
+            }
+        }
+
+        a {
+            padding: 14px 15px;
+            @include prefix-css(box-sizing, border-box);
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            color: $gray-33;
+            @include transition(color, 0.3s);
+
+            img {
+                display: inline-block;
+                vertical-align: middle;
+                width: 33px;
+                height: 33px;
+                border-radius: 4px;
+            }
+
+            span {
+                margin-left: 10px;
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 90px;
+                font-size: 14px;
+                @include text-truncate();
+            }
+        }
+    }
+
+}
+
+
+//全部课程列表
+.all-course-lists {
+    padding-top: 26px;
+    padding-bottom: 30px;
+
+    .course-list-wrap {
+
+        // max-height: none;
+        // overflow: auto;
+        // animation: expand-animation 0.2s;
+        // animation-fill-mode: forwards;
+        &.expand {
+            .ul-wrap {
+                max-height: none;
+                overflow: auto;
+                // animation: expand-animation 0.2s;
+                // animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    .ul-wrap {
+        display: inline-block;
+        font-size: 0;
+        margin-left: -76px;
+        @include justify();
+        max-height: 117px;
+        overflow: hidden;
+        animation-name: fadeIn;
+        transition: all 0.3s ease;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+
+        //display: flex;
+        //flex-wrap: wrap;
+        li {
+            font-size: 14px;
+            //flex: 0 0 (1 / 6) * 100%;
+            display: inline-block;
+            margin-left: 76px;
+            width: 152px;
+            margin-bottom: 18px;
+
+            // &:nth-of-type(6n){
+            //     text-align: right;
+            // }
+            a {
+                display: inline-block;
+                width: 152px;
+                @include text-truncate();
+                font-size: 14px;
+                color: $gray-66;
+                transition: all .3s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+    }
+
+    .other-lists-extend {
+        @include extendBtn();
+    }
+}
+
+
+
+//常用软件两列样式
+.two-col-wrap {
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    @include clearfix();
+
+    .left-col {
+        float: left;
+        width: 50%;
+        padding-right: 25px;
+        @include prefix-css(box-sizing, border-box);
+    }
+
+    .right-col {
+        float: left;
+        width: 50%;
+        padding-left: 25px;
+        @include prefix-css(box-sizing, border-box);
+    }
+}
+
+//普通一行列表
+.comm-wrap-item {
+    &.expand {
+        .comm-soft-lists {
+            max-height: none;
+            overflow: auto;
+        }
+    }
+
+    .comm-soft-lists {
+        padding-top: 9px;
+        max-height: 480px;
+        overflow: hidden;
+        animation-name: fadeIn;
+        transition: all 0.3s ease;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+
+        >li {
+            padding: 20px 0;
+            border-bottom: 1px dashed $gray-ee;
+            @include clearfix();
+
+            a {
+                @include clearfix();
+                font-size: 14px;
+                //display: inline-block;
+                color: $gray-66;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            .title {
+                float: left;
+                max-width: 500px;
+                @include text-truncate();
+            }
+
+            .label {
+                float: right;
+            }
+
+            .label-none {
+                color: $gray-99;
+                float: right;
+            }
+        }
+    }
+
+
+    .other-lists-extend {
+        @include extendBtn();
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+}

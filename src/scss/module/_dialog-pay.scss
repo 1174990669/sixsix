@@ -1,0 +1,560 @@
+//导入按钮动画效果
+//颜色
+$gray-bg: #F7F7F7;
+$gray-e9 : #E9E9E9;
+$dis-red: #fd583f;
+
+.payment-wrap {
+    width: 660px;
+    //height: 600px;
+    height: auto;
+    border-radius: 6px;
+
+    .pay-header {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid $gray-ee;
+        padding-left: 30px;
+        padding-right: 20px;
+        @include prefix-css(box-sizing, border-box);
+        font-size: 0;
+
+        .avater {
+            @include roundImg(36px);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        >h2 {
+            margin-left: 10px;
+            margin-right: 20px;
+            font-size: 14px;
+            color: $gray-33;
+            display: inline-block;
+            vertical-align: middle;
+
+            >span {
+                color: $gray-99;
+            }
+        }
+
+        .vip-icon {
+            margin-right: 6px;
+            width: 19px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .zixue-vip {
+            margin-top: 2px;
+            width: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .close-btn {
+            color: $gray-99;
+            cursor: pointer;
+            line-height: 1;
+            font-size: 18px;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+
+            &:hover {
+                color: $gray-66;
+            }
+        }
+    }
+
+    .pay-goods {
+        padding: 14px 20px 15px 20px;
+        border-bottom: 1px solid $gray-ee;
+        position: relative;
+        .goods-h {
+            font-size: 14px;
+            color: $gray-99;
+            @include clearfix();
+
+            .fl {
+                float: left;
+            }
+
+            .fr {
+                float: right;
+            }
+        }
+
+        .container-goods {
+            background-color: $gray-bg;
+            margin-top: 14px;
+            margin-bottom: 18px;
+            padding: 10px;
+        }
+
+
+    }
+
+}
+
+//商品内容
+.container-goods {
+    >li {
+        font-size: 0;
+        padding: 12px 0;
+        border-bottom: 1px dashed $gray-e9;
+
+        &:first-of-type {
+            padding-top: 0;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .goods-img {
+            width: 80px;
+            height: 55px;
+            display: inline-block;
+        }
+
+        .goods-name {
+            font-size: 14px;
+            color: $gray-33;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+
+            .g-title {
+                display: block;
+                max-width: 256px;
+                @include line-clamp(2);
+            }
+
+            .title {
+                display: block;
+                max-width: 260px;
+                @include text-truncate();
+            }
+
+            .desc {
+                margin-top: 4px;
+                display: block;
+                font-size: 12px;
+                color: $gray-99;
+
+            }
+        }
+
+        .right-price {
+            float: right;
+            font-size: 0;
+            position: relative;
+            top: 7px;
+
+            span {
+                font-size: 14px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .g-price {
+                color: $gray-99;
+                margin-right: 10px;
+            }
+
+            .vip-label {
+
+                width: 37px;
+                height: 24px;
+                line-height: 24px;
+                color: $white;
+                text-align: center;
+                background-color: $primary-color;
+                border-radius: 2px 0px 0px 2px;
+            }
+
+            .g-vip-price {
+
+                background-color: $white;
+                height: 24px;
+                line-height: 24px;
+                padding: 0 10px 0 5px;
+                color: $primary-color;
+                border-radius: 0px 2px 2px 0px;
+
+            }
+
+            .goods-price {
+                font-size: 14px;
+                color: $gray-33;
+                margin-right: 12px;
+            }
+
+            .checkbox-tips {
+                visibility: hidden;
+                margin-left: -10px;
+
+                &:checked+.checkbox-label {
+                    animation-name: scale-animation;
+                    animation-duration: 0.3s;
+                    animation-fill-mode: both;
+                    background-image: url(#{$img-dev-url}checkbox-icon-hover.png);
+                }
+            }
+
+            .checkbox-label {
+                height: 16px;
+                width: 16px;
+                display: inline-block;
+                background: url(#{$img-dev-url}checkbox-icon.png) no-repeat center;
+                vertical-align: middle;
+
+            }
+
+        }
+
+        .ck-label {
+            cursor: pointer;
+            width: 100%;
+            display: inline-block;
+        }
+    }
+}
+.pay-agreement{
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    p{
+        font-size: 12px;
+        color: $gray-33;
+        >a{
+            color: $primary-color;
+        }
+    }
+}
+.c-price-wrap {
+    float: right;
+
+    .text {
+        display: inline-block;
+        width: 70px;
+        font-size: 14px;
+        color: $gray-99;
+    }
+
+    .total-price {
+        margin-bottom: 8px;
+
+        .num {
+            color: $gray-99;
+        }
+    }
+
+    .discount {
+        margin-bottom: 5px;
+
+        .num {
+            color: $dis-red;
+        }
+
+    }
+
+    .actual-price {
+        .num {
+            font-weight: bold;
+            font-size: 18px;
+            color: $primary-color;
+        }
+    }
+}
+
+//支付的内容区域
+.pay-wrap {
+    padding: 18px 30px 30px 30px;
+
+    .pay-area-header {
+        font-size: 0;
+
+        .pay-title {
+            font-size: 14px;
+            color: $gray-99;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .pay-area-body {
+        padding-top: 24px;
+        position: relative;
+        .pay-pay-item {}
+    }
+}
+
+.pay-loading {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 55px;
+    margin: auto;
+    width: 140px;
+    height: 140px;
+    background-color: #f8f8f8;
+
+    >span {
+        background: url(#{$img-dev-url}loading.png) center no-repeat;
+        width: 32px;
+        height: 32px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -16px 0px 0px -16px;
+        -webkit-animation: rotateAni 1.8s linear infinite;
+        animation: rotateAni 1.8s linear infinite;
+    }
+
+    >em {
+        font-size: 12px;
+        line-height: 12px;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        color: #999;
+    }
+}
+
+.channels {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    @include clearfix();
+    margin-left: 0;
+
+    .wx-icon {
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        background: url(#{$img-dev-url}other/icon-wx.png) no-repeat center;
+        vertical-align: middle;
+    }
+
+    .ali-icon {
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        background: url(#{$img-dev-url}other/icon-zfb.png) no-repeat center;
+        vertical-align: middle;
+    }
+
+    .paypal-icon {
+        width: 65px;
+        height: 16px;
+        display: inline-block;
+        background: url(#{$img-dev-url}other/icon-paypal.png) no-repeat center;
+        vertical-align: middle;
+    }
+
+    .channel {
+        position: relative;
+        cursor: pointer;
+        float: left;
+        width: 90px;
+        height: 30px;
+        line-height: 28px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid #DEDEDE;
+        box-sizing: border-box;
+        color: $gray-99;
+        margin-left: 15px;
+        font-size: 0;
+
+        .text {
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .icon-corner-checked {
+            position: absolute;
+            right: -1px;
+            bottom: -1px;
+            display: none;
+            background: url(#{$img-dev-url}other/icon-gx.png) no-repeat center;
+            width: 20px;
+            height: 20px;
+        }
+
+        &.checked {
+            border-color: $primary-color;
+            color: $gray-33;
+
+            .icon-corner-checked {
+                display: block;
+            }
+        }
+
+        transition: all .3s;
+
+        &:hover {
+            border-color: $primary-color;
+            color: $gray-33;
+        }
+    }
+}
+
+.pay-pay-item {
+    .paypal-scan {
+        width: 160px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 0;
+        margin: 0 auto;
+        margin-top: 20px;
+        background-color: $primary-color;
+        color: $white;
+        font-size: 18px;
+        border-radius: 4px;
+        display: block;
+        position: relative;
+        transition: all .3s;
+        cursor: pointer;
+
+        >i {
+            font-size: 28px;
+            vertical-align: -3px;
+        }
+
+        >span {
+            font-size: 22px;
+        }
+
+        &:hover {
+            background-color: $primary-highlight;
+        }
+    }
+
+    .pay-price-wrap {
+        margin-top: 15px;
+        text-align: center;
+
+        .price-desc {
+            font-size: 14px;
+            color: $gray-99;
+            margin-bottom: 20px;
+        }
+
+        .zixue-vip-icon {
+            display: inline-block;
+            background: url(#{$img-dev-url}index/icon-zx-vip.png) no-repeat center;
+            width: 15px;
+            height: 16px;
+            vertical-align: -3px;
+        }
+
+        .vip-desc {
+            color: $primary-color;
+            font-size: 16px;
+
+        }
+    }
+
+    .qrcode-ali-wrap {
+        text-align: center;
+    }
+
+    .qrcode-wx-wrap {
+        height: 140px;
+        margin: 0 auto;
+        width: 140px;
+        text-align: center;
+    }
+}
+
+
+
+
+//支付成功弹框
+.payment-success-wrap {
+    width: 400px;
+    height: 260px;
+    text-align: center;
+    padding: 53px 0;
+    box-sizing: border-box;
+    background-color: $white;
+
+    .success-tips {
+        font-size: 18px;
+        color: $gray-66;
+        line-height: 1;
+        margin-bottom: 28px;
+    }
+
+    .desc-text {
+        line-height: 1;
+        font-size: 16px;
+        color: $gray-66;
+    }
+
+    .btn-group {
+        margin-top: 56px;
+        text-align: center;
+        font-size: 0;
+
+        %btn-style {
+            width: 120px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        .btn-hollow {
+            @extend %btn-style;
+            margin-right: 28px;
+            @include hollowBtn($primary-color, 4px, 1px);
+            transition: all .3s;
+
+            &:hover {
+                color: $primary-highlight;
+            }
+        }
+
+        .btn-solid {
+            @extend %btn-style;
+            @include solidBtn($primary-color, 4px, $white);
+            @include transition(all, .1s);
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+            @include animHover();
+        }
+    }
+}
+
+//layer弹框自定义的皮肤
+
+.my-close-skin .layui-layer-setwin {
+    right: 42px;
+    top: 38px;
+    opacity: 0;
+}
+
+.my-close-skin .layui-layer-setwin .layui-layer-close2 {
+    width: 25px;
+    height: 25px;
+    right: -28px;
+    top: -28px;
+}

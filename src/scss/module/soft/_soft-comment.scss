@@ -1,0 +1,408 @@
+//颜色
+$gray-ee: #EEEEEE;
+$comm-width: 837px;
+$img-max-width: 700px;
+$gray-f3: #F3F3F3;
+$gray-horizontal-line: #E6E4E4;
+$gray-e9: #E9E9E9;
+
+.comment-item {
+    padding: 30px 0 30px 0;
+    border-bottom: 1px solid $gray-ee;
+    @include clearfix();
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .comm-avatar {
+        width: 50px;
+        float: left;
+
+        .head {
+            @include roundImg(50px);
+
+        }
+    }
+
+}
+
+.comm-container {
+    width: $comm-width;
+    margin-left: 13px;
+    float: left;
+
+    .comm-user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .comm-username {
+            display: inline-block;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 9px;
+        }
+
+        .vip-icon-lists {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            >img {
+                margin: 0 5px;
+            }
+        }
+
+        .comm-time {
+            display: inline-block;
+            font-size: 12px;
+            color: $gray-99;
+        }
+
+    }
+
+    .comm-content {
+        margin-top: 12px;
+        word-break: break-all;
+
+
+        p {
+            word-break: break-all;
+            font-size: $gray-66;
+            font-size: 14px;
+        }
+
+        img {
+            //max-width: $img-max-width;
+            max-width: 100%;
+        }
+    }
+
+    // 展开更多回复
+    .expand-wrap {
+        font-size: 14px;
+        color: $gray-99;
+        text-align: left;
+        margin-top: 15px;
+
+        .expand-answer {
+            cursor: pointer;
+            display: inline-block;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    //收起回复
+    .fold-answer {
+        display: none;
+        margin-top: 15px;
+        text-align: center;
+
+        >p {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            color: $gray-99;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+}
+
+//底部的赞和回复
+.comm-bottom {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+
+    .support-icon {
+        display: inline-block;
+        width: 14px;
+        height: 15px;
+        margin-right: 10px;
+        background: url(#{$img-dev-url}module/other-module.png) -10px -96px;
+    }
+
+    .answer-icon {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        background: url(#{$img-dev-url}module/other-module.png) -135px -10px;
+    }
+
+    %block-style {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: $gray-99;
+    }
+
+    .support-block {
+        @extend %block-style;
+        margin-left: 25px;
+
+        &.active,
+        &:hover {
+            color: $primary-color;
+
+            .support-icon {
+                background: url(#{$img-dev-url}module/other-module.png) -44px -96px;
+            }
+        }
+
+        >em {
+            display: inline-block;
+            margin-left: 2px;
+        }
+    }
+
+    .answer-text {
+        @extend %block-style;
+
+        &:hover {
+            color: $primary-color;
+
+            .answer-icon {
+                background: url(#{$img-dev-url}module/other-module.png) -135px -44px;
+            }
+        }
+
+        &.active,
+        &.reply-active {
+            color: $primary-color;
+
+            .answer-icon {
+                background: url(#{$img-dev-url}module/other-module.png) -135px -44px;
+            }
+
+            em {
+                display: none;
+            }
+        }
+
+        >span {
+            display: inline-block;
+            vertical-align: bottom;
+            line-height: 1;
+        }
+
+        >em {
+            display: inline-block;
+            vertical-align: bottom;
+            line-height: 1;
+        }
+    }
+}
+
+@include answerCommonWrap();
+
+//回复的区域
+.answer-reply-wrap {
+    // margin-top: 30px;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+.reply-title {
+    position: relative;
+    height: 14px;
+    padding-left: 70px;
+
+    .reply-title-text {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        color: $gray-66;
+        font-size: 12px;
+    }
+
+    .reply-title-mark {
+        display: block;
+        position: absolute;
+        left: -20px;
+        top: 1px;
+        height: 12px;
+        width: 3px;
+        z-index: 1;
+        background-color: $primary-color;
+    }
+
+    .reply-title-line {
+        height: 100%;
+        overflow: hidden;
+
+        span {
+            display: block;
+            height: 0;
+            border-top: 1px solid $gray-horizontal-line;
+            margin-top: 6px;
+        }
+    }
+}
+
+.reply-lists-wrap {
+    // margin-top: 15px;
+}
+
+.reply-block {
+    position: relative;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 30px 0;
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .reply-avatar {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+
+        >img {
+            @include roundImg(50px);
+        }
+
+        margin-right: 15px;
+    }
+
+    .reply-content {
+        flex: 1;
+        font-size: 14px;
+        color: $gray-66;
+        word-break: break-all;
+
+        .r-user {
+            line-height: 22px;
+            color: $gray-33;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >h3 {
+                font-size: 14px;
+                color: #333;
+                font-weight: bold;
+
+                >em {
+                    margin: 0 6px;
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+
+            .date-time {
+                font-size: 12px;
+                color: #999;
+            }
+        }
+
+        .reply-reply {
+            color: $gray-99;
+            font-weight: 500;
+        }
+
+        .comm-content {
+            line-height: 20px;
+        }
+    }
+}
+
+.reply-operate {
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    margin-top: 6px;
+    color: $gray-99;
+
+    >span {
+        color: $gray-99;
+    }
+
+    .reply-operate-item {
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+            color: $primary-color;
+        }
+    }
+
+    .reply-dot {
+        display: inline-block;
+        margin: 0 4px;
+    }
+
+}
+
+
+.reply-box {
+    border: 1px solid #eee;
+    position: relative;
+    margin-top: 12px;
+    height: 52px;
+    padding: 8px 110px 8px 16px;
+    background-color: #fff;
+
+    .reply-box-block {
+        width: 100%;
+        height: 100%;
+
+        .reply-box-textarea {
+            width: 100%;
+            height: 100%;
+            color: $gray-33;
+            line-height: 24px;
+            font-size: 14px;
+        }
+    }
+
+    .reply-box-btn {
+        position: absolute;
+        right: 0;
+        top: -1px;
+        z-index: 1;
+        width: 103px;
+        height: 70px;
+        background-color: #eee;
+        font-size: 14px;
+        line-height: 70px;
+        text-align: center;
+        color: #999;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $primary-color;
+            color: #333;
+        }
+    }
+}
+
+.reply-moreBtn {
+    font-size: 14px;
+    color: $gray-99;
+    display: inline-block;
+    padding-right: 10px;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 16px;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+    }
+}

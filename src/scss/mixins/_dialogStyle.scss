@@ -1,0 +1,19 @@
+@mixin layerCloseSkin() {
+
+    //layer弹框自定义的皮肤
+    .layui-layer.my-close-skin {
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .my-close-skin .layui-layer-setwin {
+        right: 42px;
+        top: 38px;
+        opacity: 0;
+    }
+
+    .my-close-skin .layui-layer-setwin .layui-layer-close2 {
+        width: 25px;
+        height: 25px;
+    }
+}

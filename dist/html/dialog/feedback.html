@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录弹框</title>
+    <link rel="stylesheet" href="http://static.dev.3d66.com/public/layui/css/layui.css" />
+    <link rel="stylesheet" href="http://static.dev.3d66.com/yutu/dist/css/feedback.css" />
+</head>
+
+<body>
+
+    <div class="feedback-dialog" id="FeedbackDialog">
+        <div class="header-title">
+            <h2>请留下您的宝贵建议</h2>
+            <p>聆听用户心声，提供更好服务，我们非常重视您的反馈</p>
+        </div>
+        <div class="d-content">
+            <div class="d-item">
+                <label for="">反馈类型<em>*</em></label>
+                <ul class="checkbox-wrap">
+                    <li>
+                        <input type="radio" value="1" name="fbType" title="课程建议">
+                        <span>课程建议</span>
+                    </li>
+                    <li>
+                        <input type="radio" value="2" name="fbType" title="功能建议">
+                        <span>功能建议</span>
+                    </li>
+
+                    <li>
+                        <input type="radio" value="5" name="fbType" title="其他建议">
+                        <span>其他建议</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="d-item">
+                <label for="">反馈内容<em>*</em></label>
+                <div class="text-wrap">
+                    <textarea class="d-textarea" maxlength="400" name="content" id="content_dd"
+                        placeholder="请输入您在使用羽兔网过程中遇到的问题，或宝贵建议，感谢您对羽兔网的支持！（优质的提问或建议，通常在20-400字之间哦）"></textarea>
+                </div>
+
+            </div>
+            <div class="d-item">
+                <label for="">联系方式</label>
+                <input class="d-input" name="contact" id="contact_dd" maxlength="50" type="text"
+                    placeholder="请留下您的手机号、QQ或邮箱，以便我们及时回复您" autocomplete="off">
+            </div>
+        </div>
+        <div class="bottom-wrap">
+            <a class="btn-sure js_FbSumbit">确认</a>
+            <a class="btn-f-cancel js_FbCancel">取消</a>
+        </div>
+    </div>
+
+
+    <script src="http://static.dev.3d66.com/public/js/global/jquery-1.8.3.min.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.cookie.js"></script>
+    <script src="http://static.dev.3d66.com/public/layer/layer.js"></script>
+    <script src="http://static.dev.3d66.com/public/js/global/jquery.placeholder.min.js"></script>
+
+    <script src="http://static.dev.3d66.com/yutu/src/js/native/feedback.js"></script>
+</body>
+
+</html>

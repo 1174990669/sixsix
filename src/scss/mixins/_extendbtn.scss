@@ -1,0 +1,44 @@
+//张开按钮
+@mixin extendBtn() {
+    //display: inline-block;
+    display: none;
+    float: right;
+    font-size: 14px;
+    color: $gray-99;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    %arrow {
+        border: solid $gray-99;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: 5px;
+
+    }
+
+    .arrow-up {
+        vertical-align: 0;
+        @extend %arrow;
+        transform: rotate(-135deg);
+    }
+
+    .arrow-down {
+        vertical-align: 3px;
+        @extend %arrow;
+        transform: rotate(45deg);
+    }
+
+    &:hover {
+        color: $primary-color;
+
+        .arrow-down,
+        .arrow-up {
+            border-color: $primary-color;
+            color: $primary-color;
+        }
+
+    }
+
+}

@@ -1,0 +1,19 @@
+//导入方法
+@import './public/mixin';
+//重设基本样式
+@import './public/reset';
+//通用的
+@import './module/common';
+//通用的mixins区块方法
+@import './mixins/comonStyle';
+@import './public/animate';
+//头部导航样式
+@import './module/soft-nav';
+@import './module/course-lists';
+//广告位样式
+@import './module/add-foucs';
+//课程盒子列表
+@import './module/course-grid-flex';
+@import './module/footer';
+//PHP渲染的分页样式
+@import './module/pagination';

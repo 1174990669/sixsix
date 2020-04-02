@@ -1,0 +1,46 @@
+/* layui分页样式改 */
+
+.layui-laypage {}
+
+.layui-laypage a, .layui-laypage span{
+	margin-right: 14px;
+	margin-bottom: 0;
+	// width: 40px;
+	height: 40px;
+	line-height: 40px;
+	// box-sizing: border-box;
+	color: #999999;
+	font-size: 14px;
+	border-radius: 4px;
+	text-align: center;
+
+}
+.layui-laypage-prev .iconfont,.layui-laypage-next .iconfont{
+	font-size: 12px;
+}
+.layui-laypage>a:first-child, .layui-laypage>a:first-child em{
+	border-radius: 4px;
+}
+.layui-laypage>a:last-child, .layui-laypage>a:last-child em{
+	border-radius: 4px;
+}
+.layui-laypage a:hover{
+	color: $primary-color;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+	background-color: $primary-color;
+	border-radius: 4px;
+}
+.layui-laypage a,
+.layui-laypage button,
+.layui-laypage input,
+.layui-laypage select,
+.layui-laypage span {
+	border: 1px solid #E1E1E1;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+	color: #333;
+}
+.layui-laypage .layui-laypage-curr em{
+	color: #999;
+}

@@ -1,0 +1,185 @@
+//导入字体
+@import '../public/fonts';
+@import '../public/animate';
+
+body {
+	background-color: #fff;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #999;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+/* img {
+	max-width: 100%;
+} */
+
+.text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.text-center {
+	text-align: center;
+}
+
+[v-cloak] {
+	display: none !important;
+}
+
+.bottom-link-box a:hover {
+	color: #666;
+}
+
+.cnzz {
+	display: none;
+}
+
+/* 临时配置 */
+.course-box .a-link {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2;
+}
+
+/* 搜索关键字标签h5支持*/
+esred {
+	color: #EE564F;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}
+
+.limit-content {
+	-moz-user-select: none;
+	/*火狐*/
+	-webkit-user-select: none;
+	/*webkit浏览器*/
+	-ms-user-select: none;
+	/*IE10*/
+	-khtml-user-select: none;
+	/*早期浏览器*/
+	user-select: none;
+}
+
+.container {
+	position: relative;
+	width: 1480px;
+	margin: 0px auto;
+}
+
+.container-small {
+	position: relative;
+	width: 1210px;
+	margin: 0px auto;
+}
+
+html,
+body {
+	min-width: 1480px;
+	background-color: #f8f8f8;
+}
+
+//layer弹框自定义的皮肤
+.layui-layer.my-close-skin {
+	border-radius: 6px;
+	background-color: #fff;
+	// overflow: hidden;
+}
+
+.my-close-skin .layui-layer-setwin {
+	// right: 42px;
+	// top: 38px;
+	// opacity: 0;
+}
+
+.my-close-skin .layui-layer-setwin .layui-layer-close2 {
+	width: 20px;
+	height: 18px;
+	background: url(#{$img-dev-url}dialog/close-icon.png) no-repeat center;
+	background-size: 100% 100%;
+	right: -34px;
+	top: -34px;
+
+	&:hover {
+		background: url(#{$img-dev-url}dialog/close-hover-icon.png) no-repeat center;
+	}
+}
+
+.layui-btn {
+	background-color: $primary-color;
+	color: #333;
+
+	&:hover {
+		color: #333;
+	}
+}
+
+.layui-btn-primary {
+	background-color: #fff;
+
+	&:hover {
+		border-color: $primary-color;
+	}
+}
+
+.layui-form-radio>i:hover,
+.layui-form-radioed>i {
+	color: $a-hover;
+}
+
+//layui自定义end
+.my-empty-bg {
+	margin: 80px 0;
+	text-align: center;
+
+	.empty-wrap {
+		display: inline-block;
+		width: auto;
+		text-align: center;
+		margin: 0 auto;
+
+		>img {
+			width: auto;
+			display: block;
+			margin: 0 auto;
+		}
+
+		>p {
+			padding-left: 15px;
+			margin-top: 16px;
+			font-size: 14px;
+			color: #666;
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 1480px) {
+	.container {
+		// padding: 0 15px;
+		// box-sizing: content-box;
+	}
+}

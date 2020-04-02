@@ -1,0 +1,139 @@
+//导入按钮动画效果
+//颜色
+$red-star : #FD573F;
+$item-color1: #03628B;
+$item-color2: #FFA800;
+$item-color3: #387EE8;
+$item-color4: #1BBC9B;
+
+.dialog-enter-group-wrap {
+    width: 900px;
+    height: 544px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 6px;
+    padding: 50px 85px;
+    box-sizing: border-box;
+    text-align: center;
+
+    .d-title {
+        line-height: 1;
+        font-size: 28px;
+        color: $gray-33;
+    }
+
+    .ul-title {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 1;
+        color: $gray-66;
+        display: inline-block;
+        @include clearfix();
+        margin-left: -58px;
+
+        >li {
+            position: relative;
+            float: left;
+            margin-left: 58px;
+
+            em {
+                margin-right: 5px;
+                color: $red-star;
+                display: inline-block;
+            }
+        }
+    }
+
+    .group-wrap {
+        margin-top: 49px;
+        @include clearfix();
+    }
+}
+
+
+.col4-item {
+    width: (1/4)*100%;
+    float: left;
+    line-height: 1;
+
+    %tIconStyle {
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+    }
+
+    .t-icon1 {
+        @extend %tIconStyle;
+        background: url(#{$img-dev-url}group_css_sprites.png) -10px -10px;
+
+    }
+
+    .t-icon2 {
+        @extend %tIconStyle;
+        background: url(#{$img-dev-url}group_css_sprites.png) -120px -120px;
+
+    }
+
+    .t-icon3 {
+        @extend %tIconStyle;
+        background: url(#{$img-dev-url}group_css_sprites.png) -10px -120px;
+
+    }
+
+    .t-icon4 {
+        @extend %tIconStyle;
+        background: url(#{$img-dev-url}group_css_sprites.png) -120px -10px;
+
+    }
+
+    .t-title {
+        margin-top: 30px;
+        line-height: 1;
+        font-size: 16px;
+        color: $gray-33;
+    }
+
+    .ul-desc {
+        margin: 23px auto 48px auto;
+        text-align: center;
+        height: 74px;
+        overflow: hidden;
+        max-width: 134px;
+        font-size: 14px;
+        color: $gray-66;
+
+        >li {
+            line-height: 18px;
+            margin-bottom: 10px;
+            @include text-truncate();
+        }
+    }
+
+    .btn-solid {
+        @include solidBtn(transition, 4px, $white);
+        width: 160px;
+        height: 38px;
+        line-height: 42px;
+        display: inline-block;
+        font-size: 14px;
+        vertical-align: middle;
+        @include transition(all, .1s);
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+        @include animHover();
+
+        &.primary1{
+            background-color: $item-color1;
+        }
+        &.primary2{
+            background-color: $item-color2;
+        }
+        &.primary3{
+            background-color: $item-color3;
+        }
+        &.primary4{
+            background-color: $item-color4;
+        }
+
+    }
+}

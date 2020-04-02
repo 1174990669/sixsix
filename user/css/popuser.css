@@ -1,0 +1,455 @@
+@charset "UTF-8";
+.normal-login-title h4 {
+  color: #000;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 0px 40px;
+  text-align: left;
+}
+
+input{
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  -moz-box-shadow:0 0  0 1000px  #fff inset ;
+  box-shadow:0 0  0 1000px  #fff inset ;
+}
+
+.login .success-user {
+  display: none;
+}
+.intl-tel-input.allow-dropdown .selected-flag, .intl-tel-input.separate-dial-code .selected-flag{
+  border-right: none;
+}
+
+/* 通用模板 start */
+.login {
+  width: 400px;
+  height: 490px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.login .normal {
+  width: 400px;
+  box-sizing: border-box;
+  padding-top: 46px;
+}
+.login .normal .normal-login {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+.login .normal .normal-login .login-from label {
+  width: 300px;
+  height: 40px;
+  border-bottom: 1px solid #E7E7E9;
+  display: block;
+  margin-bottom: 22px;
+}
+.login .normal .normal-login .login-from label input {
+  border: none;
+  background: none;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.login .normal .normal-login .login-from .login-password {
+  position: relative;
+}
+.login .normal .normal-login .login-from .login-password i {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-top: -7.5px;
+  right: 0;
+  cursor: pointer;
+  background: url(/yutu/images/user/personaluser/loginv2/loginv2-1.png) center no-repeat;
+}
+.login .normal .normal-login .login-from .login-password button,.login .normal .normal-login .login-from .login-password #sendYzm {
+  display: block;
+  border-radius: 4px;
+  border: 1px solid #e7e7e9;
+  width: 90px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  right: 0;
+  cursor: pointer;
+  background: none;
+}
+.login .normal .normal-login .login-from .login-password button:hover,.login .normal .normal-login .login-from .login-password #sendYzm:hover {
+  border: 1px solid #ffd100;
+  color: #ffd100;
+}
+.login .normal .normal-login .login-from .login-password .seepwd {
+  background: url(/yutu/images/user/personaluser/loginv2/loginv2-2.png) center no-repeat;
+}
+.login .normal .normal-login .reset-pwd-text {
+  font-size: 14px;
+  color: #FDA333;
+  margin-bottom: 40px;
+  line-height: 14px;
+}
+.login .normal .normal-login .login-btn a {
+  width: 300px;
+  height: 44px;
+  background-color: #ffe300;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 44px;
+  /* color: #fff; */
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.login .normal .normal-login .login-btn .login-btn-active {
+  background-color: #ffd100;
+  color: #333;
+}
+.login .normal .normal-login .contact-us {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #808080;
+}
+.login .normal .normal-login .contact-us em {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+  background-size: 100% 100%;
+  background: url(/yutu/images/user/personaluser/pop-user/03.png) center no-repeat;
+}
+.login .normal .normal-login .contact-us a {
+  display: inline-block;
+  width: 71px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #ffd100;
+  border-radius: 4px;
+  text-align: center;
+  color: #ffd100;
+  margin-left: 10px;
+}
+
+.intl-tel-input.separate-dial-code .selected-dial-code {
+  color: #333;
+}
+
+/* 通用模板 end */
+/* 操作通用结果页 start */
+.reset-result {
+  width: 400px;
+  float: left;
+  box-sizing: border-box;
+  padding-top: 46px;
+}
+.reset-result .password-success-wraper {
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+}
+.reset-result .password-success-wraper .res-success-imgs {
+  margin: 30px 0px;
+}
+.reset-result .password-success-wraper .res-success-imgs img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.reset-result .password-success-wraper .res-success-test h4 {
+  font-size: 18px;
+  color: #000;
+  line-height: 18px;
+  margin: 10px 0px 40px;
+}
+.reset-result .password-success-wraper .res-success-btn {
+  width: 300px;
+  height: 44px;
+  background-color: #ffd100;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 44px;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.res-success .success-user {
+  display: block;
+}
+
+.res-success .normal {
+  display: none;
+}
+
+/* 操作通用结果页 end */
+/* 设置登录密码 start */
+.setup-pwd .normal-login-title h4 {
+  padding: 0px 0px 20px;
+}
+
+.setup-pwd-text {
+  font-size: 14px;
+  color: #999;
+  line-height: 20px;
+  padding-bottom: 20px;
+}
+
+.setup-pwd .reset-result .password-success-wraper .res-success-test h4 {
+  margin: 10px 0px 0px;
+}
+
+.setup-pwd .res-success-test p {
+  margin: 10px 0px 40px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #999;
+}
+.setup-pwd .res-success-test p b {
+  font-weight: normal;
+  color: #FDA333;
+}
+
+/* 设置登录密码 end */
+/* 更换密保手机 start */
+.change-phone-area {
+  display: inline-block;
+  border-right: 1px solid #d5d5d5;
+  height: 14px;
+  font-size: 14px;
+  line-height: 14px;
+  padding-right: 10px;
+  position: absolute;
+  top: 14px;
+  left: 0px;
+}
+
+.change-phone .normal .normal-login .login-from label input {
+  width: 300px;
+  padding-left: 5px;
+}
+.intl-tel-input .flag-container:after{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 1px;
+  height: 12px;
+  top: 14px;
+  right: -1px;
+  background: #ddd;
+}
+
+.change-phone .reset-result .password-success-wraper .res-success-test h4 {
+  margin: 10px 0px 0px;
+}
+
+.change-phone .reset-result .password-success-wraper .res-success-test p {
+  font-size: 14px;
+  color: #999;
+  line-height: 14px;
+  margin: 10px 0px 40px;
+}
+
+.change-phone .reset-result .password-success-wraper .res-success-test p b {
+  font-weight: normal;
+  color: #FDA333;
+}
+
+.change-phone .login-from {
+  margin-bottom: 35px;
+}
+
+.rgmp .normal .normal-login .login-from label {
+  position: relative;
+}
+
+.rgmp .normal .normal-login .login-from label .monitor-input1 {
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+.rgmp .normal .normal-login .login-from label .monitor-input3 {
+  padding-left: 110px;
+  box-sizing: border-box;
+}
+
+/* 更换密保手机 end */
+/* 绑定密保手机 start */
+/* 绑定密保手机 end */
+/* 解绑微信 start */
+.pop-untying-wechat {
+  width: 400px;
+  height: 490px;
+  border-radius: 4px;
+}
+.pop-untying-wechat .untying-satisfy {
+  width: 300px;
+  box-sizing: border-box;
+  padding-top: 46px;
+  margin: 0 auto;
+  text-align: center;
+}
+.pop-untying-wechat .untying-satisfy .wechat-erweima {
+  margin: 0px 0px 50px;
+}
+.pop-untying-wechat .untying-satisfy .wechat-erweima img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 142px;
+  height: 142px;
+}
+.pop-untying-wechat .untying-satisfy .wechat-text {
+  color: #FDA333;
+  font-size: 14px;
+  line-height: 20px;
+}
+.pop-untying-wechat .untying-notsatisfy {
+  width: 300px;
+  box-sizing: border-box;
+  padding-top: 46px;
+  margin: 0 auto;
+  text-align: center;
+}
+.pop-untying-wechat .untying-notsatisfy .notsatisfy-condition {
+  padding-top: 32px;
+}
+.pop-untying-wechat .untying-notsatisfy .notsatisfy-condition span {
+  font-size: 16px;
+  line-height: 28px;
+  color: #808080;
+  display: block;
+  margin-bottom: 20px;
+}
+.pop-untying-wechat .untying-notsatisfy .notsatisfy-condition span em {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 13px;
+  vertical-align: middle;
+}
+.pop-untying-wechat .untying-notsatisfy .notsatisfy-condition span .notsatisfy-icon {
+  background-size: 100% 100%;
+  background: url(/yutu/images/user/personaluser/pop-user/01.png) center no-repeat;
+}
+.pop-untying-wechat .untying-notsatisfy .notsatisfy-condition span .satisfy-icon {
+  background-size: 100% 100%;
+  background: url(/yutu/images/user/personaluser/pop-user/01s.png) center no-repeat;
+}
+.pop-untying-wechat .notsatisfy-btn {
+  width: 300px;
+  height: 44px;
+  line-height: 44px;
+  background-color: #ffd100;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+/* 解绑微信 end */
+/* 绑定微信 start */
+.binding-wechat .untying-satisfy .wechat-text {
+  color: #999999;
+  font-size: 14px;
+  line-height: 23px;
+}
+.binding-wechat .untying-satisfy .wechat-text em {
+  background: url(/yutu/images/user/personaluser/loginv2/loginv2-8.png) center no-repeat;
+  display: inline-block;
+  background-size: 100% 100%;
+  width: 23px;
+  height: 23px;
+  margin-right: 13px;
+  vertical-align: middle;
+}
+.binding-wechat .untying-satisfy .wechat-text span {
+  color: #ffd100;
+}
+
+/* 绑定微信 end */
+/* 个人中心（绑定手机弹窗） start */
+.pop-binding-user {
+  width: 400px;
+}
+.pop-binding-user .binding-user-imgs {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.pop-binding-user .binding-user-imgs img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pop-binding-user .normal-login-title h4 {
+  line-height: 24px;
+}
+.pop-binding-user .login-from {
+  margin-bottom: 40px;
+}
+.pop-binding-user .binding-user-btn {
+  width: 300px;
+  height: 44px;
+  background: #ffd100;
+  border-radius: 4px;
+  line-height: 44px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+}
+
+.pop-binding-user .normal .normal-login .login-from .login-password button,.pop-binding-user .normal .normal-login .login-from .login-password #sendYzm {
+  display: block;
+}
+
+/* 个人中心（绑定手机弹窗） end */
+
+
+/* 修改性别、生日弹窗 start */
+.user-confirm{
+  width: 300px;
+  height: 230px;
+  background-color: #fff;
+  padding: 54px 40px 0px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.user-confirm p{
+  line-height: 18px;
+  font-size: 18px;
+  padding-bottom: 16px;
+}
+.user-confirm p span{
+  color: #FDA333;
+}
+.user-confirm input{
+  width:220px;
+  height:44px;
+  background:#ffd100;
+  border-radius:4px;
+  line-height: 44px;
+  border: none;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fff;
+  display: block;
+  margin: 35px auto 0px;
+  cursor: pointer;
+}
+
+/* 修改性别、生日弹窗 end */
+
+
+/*# sourceMappingURL=popuser.css.map */

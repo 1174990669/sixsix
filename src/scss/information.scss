@@ -1,0 +1,188 @@
+//导入方法
+@import './public/mixin';
+//重设基本样式
+@import './public/reset';
+//通用的
+@import './module/common';
+//通用的mixins区块方法
+@import './mixins/comonStyle';
+@import './public/animate';
+//头部导航样式
+@import './module/soft-nav';
+@import './module/pagination';
+//广告位样式
+@import './module/add-foucs';
+@import './module/footer';
+
+body {
+    background-color: #fff;
+}
+
+//最新资讯
+.information-block {
+    background-color: #fff;
+    padding: 40px 0 60px 0;
+  
+
+    .information-content {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        height: 1160px;
+        max-height: 1160px;
+    }
+
+    .left-col {
+        // width: 615px;
+        box-sizing: border-box;
+
+    }
+
+    .vertical-line {
+        display: inline-block;
+        height: 1160px;
+        width: 1px;
+        margin: 0 20px;
+        margin-top: 10px;
+        background-color: #eee;
+    }
+
+    .right-col {
+        width: 490px;
+        box-sizing: border-box;
+    }
+
+    .col-item {
+        width: 595px;
+        height: 32px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .3s;
+        color: #666;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #f6f6f6;
+            color: #FFA900;
+
+            .title-wrap>i {
+                background-color: #FFA900;
+            }
+        }
+
+        .title-wrap {
+            display: flex;
+            align-items: center;
+
+            >span {
+                display: inline-block;
+                width: 450px;
+                @include text-truncate();
+            }
+
+            >i {
+                display: inline-block;
+                margin-right: 10px;
+                width: 4px;
+                height: 4px;
+                background-color: #666;
+                border-radius: 50%;
+            }
+        }
+
+    }
+}
+
+//网站地图
+.map-site-block {
+    background-color: #f6f6f6;
+    padding: 0 0 60px 0;
+}
+
+.show-item {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+
+    .header {
+        font-size: 16px;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid #eee;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+
+        >h2 {
+            position: relative;
+            display: inline-block;
+            color: #333;
+            font-weight: bold;
+            padding-left: 22px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 20px;
+                width: 3px;
+                height: 20px;
+                background-color: #FFD100;
+            }
+        }
+    }
+
+    .lists-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px 0 20px 12px;
+    }
+}
+
+.a-item {
+    display: flex;
+    align-items: center;
+    width: 218px;
+    height: 66px;
+    line-height: 66px;
+    margin: 10px;
+    padding: 0 17px;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    transition: all .3s;
+
+    &:hover {
+        background-color: #ededed;
+    }
+
+    >img {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+    }
+
+    >span {
+        padding-left: 15px;
+        padding-right: 5px;
+        box-sizing: border-box;
+        width: 134px;
+        display: inline-block;
+        @include text-truncate();
+        font-size: 14px;
+        color: #666;
+    }
+
+    >i {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background: url(#{$img-dev-url}arrow-icon.png);
+    }
+}

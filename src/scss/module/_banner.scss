@@ -1,0 +1,198 @@
+//大图轮播
+.inner-banner {
+    min-width: 1480px;
+    max-width: 1920px;
+    width: 1480px;
+    margin: 0 auto 0 auto;
+    height: 430px;
+    // overflow: hidden;
+    position: relative;
+    display: flex;
+    // border-radius:4px 4px 0px 0px;
+    // box-shadow: 0 12px 24px 0 rgba(7, 17, 27, 0.2);
+
+    .swiper-container {
+        width: 1480px;
+        height: 430px;
+        min-width: 1480px;
+
+        &:hover {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                opacity: 1;
+                transform: scale(1.0);
+                // transition: opacity,transform .5s;
+            }
+        }
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+
+        .swiper-img-bg {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            border-radius: 4px 4px 0 0;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    .swiper-slide {
+        height: 430px;
+    }
+
+    %swiper-button {
+        width: 52px;
+        height: 52px;
+        opacity: 0;
+        transform: scale(.1);
+        transform-origin: 50% 50%;
+        transition: opacity, transform .5s;
+    }
+
+    .swiper-button-prev {
+        @extend %swiper-button;
+        left: 30px;
+        background: url(#{$img-dev-url}index/left_arrow.png) no-repeat center;
+
+        &:hover {
+            background: url(#{$img-dev-url}index/left_arrowhover.png) no-repeat center;
+        }
+    }
+
+    .swiper-button-next {
+        @extend %swiper-button;
+        right: 30px;
+        background: url(#{$img-dev-url}index/right_arrow.png) no-repeat center;
+
+        &:hover {
+            background: url(#{$img-dev-url}index/right_arrowhover.png) no-repeat center;
+        }
+    }
+
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 5px;
+    }
+
+    .swiper-container-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        bottom: 95px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        opacity: .7;
+        border-radius: 50%;
+        // border-radius: 100%;
+        background: #fff;
+        @include transition(all, 0.2s);
+
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 26px;
+        height: 10px;
+        opacity: 0.7;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    .swiper-img-bg {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        border-radius: 4px 4px 0 0;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+//重写轮播图样式end
+
+
+/* 右侧广告位的轮播样式 */
+@mixin adBanner() {}
+
+// .right-swiper-wrap {
+//     max-width: 350px;
+//     margin: 0 auto;
+//     margin-top: 20px;
+//     height: auto;
+//     height: 203px;
+//     overflow: hidden;
+//     position: relative;
+
+//     .swiper-container {
+//         width: 100%;
+//         height: 203px;
+//         //min-width: 350px;
+
+//         .swiper-img-bg {
+//             border-radius: 4px;
+//         }
+//     }
+
+//     .swiper-slide {
+//         pointer-events: auto;
+//         height: 203px;
+//     }
+
+
+//     .swiper-pagination-bullet {
+//         width: 6px;
+//         height: 6px;
+//         border-radius: 100%;
+//         background: transparent;
+//         opacity: 1;
+//         border: 1px solid $white;
+//         @include transition(all, 0.2s);
+
+//     }
+
+//     .swiper-pagination-bullet-active {
+//         width: 34px;
+//         height: 8px;
+//         border-radius: 4px;
+//         background: $white;
+//         border: none;
+//     }
+// }

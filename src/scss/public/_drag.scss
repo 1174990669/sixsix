@@ -1,0 +1,10 @@
+.outer{
+    background: #f8f8f8;
+    width: 500px;
+    height: 500px;
+    .inner{
+        background: #999999;
+        width: 50px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,219 @@
+//导入方法
+@import './public/mixin';
+//重设基本样式
+@import './public/reset';
+//通用的
+@import './module/common';
+//通用的mixins区块方法
+@import './mixins/comonStyle';
+@import './public/animate';
+//头部导航样式
+@import './module/soft-nav';
+
+//PHP渲染的分页样式
+@import './module/pagination';
+//广告位样式
+@import './module/add-foucs';
+
+@import './module/footer';
+
+
+body {
+    background-color: #f6f6f6;
+}
+
+.soft-front-block {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    @include breadcrumb();
+
+
+}
+
+.sort-wrap {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    padding-top: 20px;
+
+    .sort-item {
+        padding: 10px 20px 10px 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        >label {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+
+    .label-name {
+        width: 36px;
+        color: #666;
+        display: block;
+        line-height: 32px;
+        text-align: right;
+        margin-right: 5px;
+        transition: all .3s ease 0s;
+    }
+
+    .sort-lists {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex: 1 1 0%;
+        max-height: 32px;
+        overflow: hidden;
+
+        &.expand {
+            .arrow-icon {
+                transform: rotate(-135deg);
+                top: 14px;
+            }
+        }
+
+        .label {
+            text-align: center;
+            margin: 0 5px 10px 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: #fff;
+            color: #666;
+            padding: 5px 14px;
+            border-radius: 4px;
+
+            transition: color .3s;
+
+            &:hover {
+                font-weight: 500;
+                color: #ffa900;
+                background-color: #f2f2f2;
+            }
+
+        }
+
+        .active {
+            // margin: 0 15px;
+            padding: 5px 15px;
+            font-weight: 500;
+            color: #ffa900;
+            background-color: #f2f2f2;
+        }
+    }
+
+    .arrow-icon {
+        display: none;
+        position: absolute;
+        top: 7px;
+        right: 2px;
+        width: 1px;
+        height: 1px;
+        border: solid #999;
+        border-width: 0 1px 1px 0;
+        padding: 4px;
+        transform: rotate(45deg);
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    .border-top {
+        margin-top: 10px;
+        padding: 20px;
+        border-top: 1px solid #eee;
+    }
+}
+
+
+.soft-show-block {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+
+    .text-block {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 188px;
+        height: 85px;
+        background-color: #f6f6f6;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        padding-left: 34px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:hover {
+            >p {
+                // color: $a-hover;
+            }
+        }
+
+        >p {
+            font-size: 16px;
+            color: #666;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        >span {
+            font-size: 14px;
+            color: #FF4A3B;
+        }
+    }
+
+    .lists {
+        display: flex;
+        align-items: center;
+
+        >a {
+            margin-left: 42px;
+            display: inline-block;
+            text-align: center;
+
+            &:hover {
+                .name {
+                    color: $a-hover;
+                }
+            }
+
+            >img {
+                display: block;
+                width: 60px;
+                height: 60px;
+                border-radius: 4px;
+            }
+        }
+
+        .name {
+            display: inline-block;
+            max-width: 60px;
+            @include text-truncate();
+            margin-top: 10px;
+            font-size: 14px;
+            color: #999;
+            transition: all .3s;
+        }
+
+    }
+}
+.container-block{
+    .left-block{
+        
+    }
+}
+
+.relevant-soft-block {
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+@include softFrontLists();
+
+@include softStudyBlock();

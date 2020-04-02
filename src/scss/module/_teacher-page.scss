@@ -1,0 +1,148 @@
+@import '../public/list_header';
+
+//颜色
+$head-a: #C0BEBE;
+$gray-88: #888888;
+
+.content-header {
+    margin: 0;
+}
+
+.teacher-header {
+    padding: 20px 0 28px 0;
+    margin-bottom: 50px;
+    position: relative;
+    @include breadcrumb($head-a, $primary-color);
+
+    .teacher-header-wrap {
+        height: 320px;
+        transition: 2s linear;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        //align-items: center;
+        justify-content: center;
+        align-self: center;
+
+        .mask {
+            position: absolute;
+            // opacity: .5;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+        }
+
+        img {
+            width: 2560px;
+            //max-width: 1300px;
+        }
+    }
+
+    .container {}
+}
+
+.teacher-info-wrap {
+    text-align: center;
+    margin: 0 auto;
+    width: 800px;
+    margin-top: 28px;
+    .teacher-info {
+        .teacher-head {
+            margin: 0 auto;
+            display: inline-block;
+            @include roundImg(100px);
+            border: 5px solid rgba($color: #fff, $alpha: 0.5);
+            box-sizing: border-box;
+            background-color: rgba($color: #fff, $alpha: 0.5);
+            box-shadow:1px 2px 8px 0px rgba(31,31,31,0.2);
+            overflow: hidden;
+            // box-shadow: rgba(121, 108, 108, 0.4) 0px 4px 8px 1px;
+
+            >img {
+
+                border: 0;
+                width: 90px;
+                height: 90px;
+                display: block;
+            }
+        }
+
+        >h3 {
+            line-height: 1;
+            color: $white;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+        }
+    }
+
+    .course-desc {
+        @include clearfix();
+        line-height: 1;
+        display: flex;
+        .left-course {
+            flex: 1;
+            
+            line-height: 1;
+            display: inline-block;
+            vertical-align: top;
+            padding-right: 30px;
+            text-align: right;
+            >span {
+                
+                display: inline-block;
+                color: $white;
+                font-size: 14px;
+            }
+
+            .num {
+                font-weight: bold;          
+                color: $white;
+                margin-left: 6px;
+            }
+        }
+
+
+
+        .right-study {
+            flex: 1;
+            border-left: 1px solid #989696;
+            padding-left: 30px;
+            line-height: 1;
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+            >span {
+                
+                display: inline-block;
+                color: $white;
+                font-size: 14px;
+            }
+
+            .num {
+                font-weight: bold;
+                color: $white;
+                margin-left: 6px;
+            }
+        }
+    }
+
+    .teacher-desc {
+        margin: 20px auto 0 auto;
+        max-width: 630px;    
+        max-height: 40px;
+        >p {
+            
+            @include line-clamp(2);
+            text-align: justify;
+            margin-top: 15px;
+            line-height: 20px;
+            // color: $gray-99;
+            color: rgba($color: #fff, $alpha: 0.5);
+            font-size: 14px;
+        }
+    }
+}

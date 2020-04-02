@@ -1,0 +1,220 @@
+.account-info-block {
+    padding: 0 30px 30px 30px;
+
+    .item-info {
+        padding: 40px 0 30px 0;
+        display: flex;
+        border-bottom: 1px solid #eee;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.item-info {
+    .left-info {
+        display: flex;
+    }
+
+    .right-opt {}
+
+    .text-wrap {
+        margin-left: 20px;
+        line-height: 1;
+
+        >h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+
+            span {
+                margin-left: 10px;
+                font-size: 14px;
+                color: #FFA900;
+            }
+        }
+
+        >p {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+
+    .iphone-icon {
+        display: inline-block;
+        width: 19px;
+        height: 30px;
+        background: url(#{$img-dev-url}user/user-sp.png) -10px -58px;
+    }
+
+    .pwd-icon {
+        display: inline-block;
+        width: 25px;
+        height: 28px;
+        background: url(#{$img-dev-url}user/user-sp.png) -10px -10px;
+    }
+
+    .email-icon {
+        display: inline-block;
+        width: 25px;
+        height: 17px;
+        background: url(#{$img-dev-url}user/user-sp.png) -100px -10px;
+    }
+
+    .btn-solid {
+        display: inline-block;
+        width: 90px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        background-color: $primary-color;
+        border-radius: 4px;
+        color: #333;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+.account-bind {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.top-info {
+    display: flex;
+
+    .social-icon {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background: url(#{$img-dev-url}user/user-sp.png) -55px -10px;
+    }
+
+    .text-wrap {
+        margin-left: 20px;
+        line-height: 1;
+
+        >h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        >p {
+            font-size: 14px;
+            color: #999;
+        }
+    }
+}
+
+.bind-block {
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+
+    .item {
+        display: flex;
+        align-items: center;
+        margin: 0 40px;
+    }
+
+    .info {
+        line-height: 1;
+        margin-left: 14px;
+
+        >h5 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 9px;
+        }
+
+        >p {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .un-tips {
+            color: #FFA900;
+        }
+
+        .btn-border {
+            display: block;
+            width: 60px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-radius: 4px;
+            border: 1px solid #BBBBBB;
+            cursor: pointer;
+        }
+    }
+
+    %icon-style {
+        display: inline-block;
+        width: 66px;
+        height: 66px;
+    }
+
+    .qq-icon {
+        @extend %icon-style;
+        background: url(#{$img-dev-url}user/qq-hight.png) no-repeat center;
+    }
+
+    .qq-un-icon {
+        @extend %icon-style;
+        background: url(#{$img-dev-url}user/qq-icon.png) no-repeat center;
+    }
+
+    .wechat-icon {
+        @extend %icon-style;
+        background: url(#{$img-dev-url}user/wechat-hight.png) no-repeat center;
+    }
+
+    .wechat-un-icon {
+        @extend %icon-style;
+        background: url(#{$img-dev-url}user/wechat-icon.png) no-repeat center;
+    }
+}
+
+.v3-erweima {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    background-color: #333333;
+    padding-bottom: 35px;
+}
+
+.v3-erweima h2 {
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 20px;
+    padding: 30px 0px 20px;
+}
+
+.v3-erweima-show {
+    background-color: #fff;
+    width: 282px;
+    height: 282px;
+    margin: 0px auto;
+}
+
+.v3-erweima-show img {
+    width: 282px;
+    height: 282px;
+}
+
+.v3-erweima-text {
+    font-size: 14px;
+    color: #FFFFFF;
+    width: 282px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: rgba(35, 35, 35, 1);
+    border-radius: 24px;
+    margin: 20px auto 0px;
+}

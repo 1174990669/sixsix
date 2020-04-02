@@ -1,0 +1,244 @@
+//es搜索结果的关键字颜色
+esred {
+    color: #EE564F;
+}
+
+body,
+html {
+    background-color: #fff;
+}
+
+.search-box-bg {
+    height: 84px;
+}
+
+// 搜索盒子
+.search-box-wrap {
+    position: relative;
+    padding: 20px 0;
+
+    //重写搜索框样式
+    .autocomplete-suggestions {
+        top: 70px;
+
+        &::after {
+            border: none;
+        }
+    }
+
+    .searchbox {
+        display: flex;
+        align-items: center;
+        width: 610px;
+        height: 44px;
+        line-height: 44px;
+        box-sizing: border-box;
+        position: relative;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0px 1px 5px 0px rgba(40, 40, 40, 0.15);
+
+        >label {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            width: 520px;
+            height: 44px;
+            line-height: 44px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 4px 0px 0px 4px;
+
+        }
+
+        .soft-searchkey {
+            width: 100%;
+            border: none;
+            height: 100%;
+            font-size: 14px;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0 12px;
+            background-color: #ffffff;
+        }
+
+        .searchbtn {
+            width: 90px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 0px 4px 4px 0px;
+            background-color: $primary-color;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+
+        }
+
+        .clear-icon {
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            z-index: 3;
+            color: #e1e1e1;
+            transition: all 0.3s ease;
+
+            &::before {
+                content: "\e601";
+                box-sizing: border-box;
+            }
+        }
+
+    }
+}
+
+.search-content-nav {
+    background-color: #f6f6f6;
+}
+
+.course-wrap {
+    margin-left: -30px;
+
+    >li {
+        margin-left: 30px;
+
+        &:hover {
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .1);
+        }
+    }
+
+}
+
+//搜索导航
+.search-nav-wrap {
+    .ul-search-nav {
+        @include clearfix();
+
+        >li {
+            float: left;
+            //padding: 14px 10px;
+            color: $gray-99;
+            font-size: 14px;
+            transition: color 0.3s;
+            margin-right: 40px;
+
+            &.active {
+                color: $gray-33;
+                //border-bottom: 1px solid $primary-color;
+            }
+
+            &.full {
+                hr {
+                    width: 100%;
+                }
+            }
+
+            >hr {
+                width: 0;
+                height: 2px;
+                border: none;
+                position: relative;
+                background-color: #333;
+                margin: 0 auto;
+                transition: width 0.3s ease;
+            }
+
+            &:hover {
+                color: $gray-33;
+            }
+
+            a {
+                line-height: 1;
+                padding: 14px 1px;
+                display: inline-block;
+                color: inherit;
+            }
+        }
+    }
+}
+
+.search-content {
+    padding-bottom: 60px;
+    word-break: break-all;
+
+    .item-common {
+        padding-top: 30px;
+    }
+
+    .common-title {
+        line-height: 1;
+        display: flex;
+        align-items: center;
+
+        >h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+
+            >span {
+                font-weight: normal;
+                margin-left: 8px;
+                font-size: 14px;
+                color: #999;
+            }
+        }
+    }
+
+    .look-more {
+        text-align: center;
+        // margin-top: 10px;
+
+        .more-btn {
+            display: inline-block;
+            cursor: pointer;
+            width: 220px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            background-color: #f6f6f6;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #999;
+            transition: all .3s;
+
+            &:hover {
+                color: #333;
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .soft-course-lists {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@include softFrontLists();
+
+.relevant-soft-lists {
+    border-bottom: 1px solid #eee;
+}
+
+@include commonLists();
+.comm-soft-lists{
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+@include commonArticleLists();
+.comm-article-lists{
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;   
+}
+.comm-article-lists .comm-item .desc-content>h2{
+    max-width: 1000px;
+}
+
+//空页面导入
+@include emptyBg();

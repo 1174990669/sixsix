@@ -1,0 +1,54 @@
+/* 分页样式改 */
+.pagination {
+	text-align: center;
+	margin: 20px auto auto;
+	margin-bottom: 60px;
+
+	li {
+		display: inline-block;
+		margin-left: 6px;
+		background: #fff;
+		color: #999;
+		border-radius: 4px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		>a,
+		>span {
+			border: 1px solid #E1E1E1;
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include prefix-css(box-sizing, border-box);
+			line-height: 40px;
+			border-radius: 4px;
+			// padding: 0px 15px;
+			color: #666;
+			background: #fff;
+			transition: all 0.3s;
+		}
+
+		a:hover {
+			color: $primary-color;
+			border: 1px solid $primary-color;
+		}
+
+		&.active {
+			span {
+				border: 1px solid $primary-color;
+				background: $primary-color;
+				color: #333;
+			}
+		}
+	}
+}
+
+.pagination li.disabled span:hover {
+	cursor: not-allowed;
+}
+
+.pagination li.disabled span {
+	color: #D2D2D2;
+}

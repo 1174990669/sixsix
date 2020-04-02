@@ -1,0 +1,83 @@
+
+$icon-hover-color: #001944;
+$header-border-color: #EEEEEE;
+$soft-hover: #001944;
+
+
+//头部
+.content-header {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin: 0 30px;
+    border-bottom: 1px solid $header-border-color;
+    line-height: 1;
+
+    >h3 {
+        color: $gray-33;
+        font-size: 18px;
+        float: left;
+
+        >i {
+            vertical-align: -3px;
+            margin-right: 10px;
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            border-radius: 2px;
+            background-color: $primary-color;
+        }
+        .numbers{
+            color: $gray-99;
+        }
+    }
+
+    .nav-lists {
+        float: right;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 0;
+        margin-top: 5px;
+
+        >li {
+            cursor: pointer;
+            font-size: 14px;
+            color: $gray-66;
+            padding-right: 15px;
+            display: inline-block;
+            position: relative;
+            margin-right: 15px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 4px;
+                right: 0;
+                width: 1px;
+                height: 12px;
+                background-color: #EEEEEE;
+            }
+
+            transition: color 0.3s;
+
+            &.active {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .more {
+        float: right;
+        margin-top: 5px;
+
+        a {
+            color: $gray-99;
+            font-size: 14px;
+            transition: all 0.3s;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+   
+}

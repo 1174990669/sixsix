@@ -1,0 +1,165 @@
+.course-recommend {
+    margin-top: 60px;
+
+    .course-wrap {
+        align-items: center;
+    }
+
+    >h3 {
+        font-size: 16px;
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .more-link {
+        margin-left: 20px;
+        display: inline-block;
+        width: 20px;
+        height: 46px;
+        line-height: 46px;
+        background-color: #dddddd;
+        border-radius: 2px;
+
+        &:hover {
+            .more-icon {
+                background: url(#{$img-dev-url}user/right-arrow-hover.png) no-repeat center;
+            }
+        }
+    }
+
+    .more-icon {
+        display: block;
+        margin: 15px auto 0 auto;
+        width: 7px;
+        height: 12px;
+        background: url(#{$img-dev-url}user/right-arrow.png) no-repeat center;
+
+
+    }
+}
+
+.course-lists-block {
+    padding: 0px 30px 48px 30px;
+}
+
+.course-lists {
+    padding-bottom: 20px;
+
+    .item {
+        border-bottom: 1px solid #eee;
+        padding: 30px 0;
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+    }
+
+    .left-wrap {
+        display: flex;
+        align-items: center;
+
+        >img {
+            width: 210px;
+            height: 157px;
+            max-width: 210px;
+        }
+    }
+
+    .right-wrap {
+        .btn-cancel {
+            height: 15px;
+            margin-bottom: 10px;
+            text-align: right;
+
+            &:hover {
+                .cancel {
+                    display: inline-block;
+                    color: #FFA900;
+                }
+
+                .c-icon {
+                    background: url(#{$img-dev-url}user/user-sp.png) -77px -143px;
+                }
+            }
+
+            >span {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 12px;
+                color: #999;
+            }
+
+            .cancel {
+                cursor: pointer;
+                display: none;
+                margin-right: 8px;
+            }
+
+            .c-icon {
+                display: inline-block;
+                width: 12px;
+                height: 9px;
+                background: url(#{$img-dev-url}user/user-sp.png) -45px -143px;
+            }
+        }
+
+        .btn-goon {
+            width: 90px;
+            height: 34px;
+            line-height: 34px;
+            display: inline-block;
+            color: #333;
+            font-size: 14px;
+            border-radius: 4px;
+            text-align: center;
+            background-color: $primary-color;
+
+        }
+    }
+
+    .info-block {
+        margin-left: 20px;
+
+        >h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .lable {
+            font-size: 12px;
+            color: #999;
+
+            >span {
+                display: inline-block;
+                height: 12px;
+                line-height: 12px;
+                padding-right: 10px;
+                border-right: 1px solid #999;
+                margin-right: 10px;
+
+                &:first-child {
+                    color: #FF4A3B;
+                }
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+
+        }
+
+        .desc {
+            margin-top: 26px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #999;
+
+        }
+    }
+}

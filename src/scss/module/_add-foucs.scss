@@ -1,0 +1,253 @@
+// 广告位样式全集
+.single-img-block {
+    text-align: center;
+
+    .img-wrap {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+
+        // height: 100px;
+        >img {
+            border-radius: 4px;
+            width: 100%;
+
+        }
+    }
+}
+
+.four-img-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .img-wrap {
+        width: 288px;
+        overflow: hidden;
+
+        >img {
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+            transition: all .35s;
+
+            /* transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); */
+            &:hover {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+
+.back-top-block {
+    position: absolute;
+    bottom: 56px;
+    right: -70px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #DDDDDD;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        background-color: $a-hover;
+
+        .arrow {
+            // border-color: $a-hover;
+        }
+    }
+
+    .arrow {
+        width: 0;
+        height: 0;
+        border: solid #fff;
+        border-width: 2px 2px 0px 0;
+        display: inline-block;
+        margin-top: 3px;
+        padding: 3px;
+        transform: rotate(-45deg);
+        cursor: pointer;
+        transition: all .3s;
+    }
+}
+
+//五个图片的广告位样式
+.six-img-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    >a {
+        display: inline-block;
+        position: relative;
+        //width: 20%;
+        height: auto;
+        width: 195px;
+        overflow: hidden;
+        border-radius: 6px;
+        @include transition(all, 0.3s);
+
+        &:hover {
+            box-shadow: 0px 1px 8px 0px rgba(40, 40, 40, 0.5);
+        }
+
+        img {
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            max-width: 102%;
+            cursor: pointer;
+            /* transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); */
+
+        }
+    }
+}
+
+//图文图片广告位样式
+.textImgs-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .more {
+        color: $gray-99;
+        text-align: center;
+        line-height: 100px;
+        font-size: 16px;
+        border: 1px solid $gray-ee;
+        transition: all .3s;
+
+        &:hover {
+            // border: 1px solid $gray-99;
+            color: $gray-66;
+        }
+    }
+
+    >a {
+        display: inline-block;
+        position: relative;
+        width: 280px;
+        height: 100px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            max-width: 102%;
+            cursor: pointer;
+            transition: all .3s;
+
+            /* transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); */
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.big-img-bg {
+    margin-bottom: 60px;
+}
+
+.four-textImgs-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+
+    >a {
+        display: inline-block;
+        position: relative;
+        width: 310px;
+        height: 120px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            max-width: 102%;
+            cursor: pointer;
+
+        }
+    }
+}
+
+.fourTextImg {
+    >ul {
+        display: flex;
+        justify-content: space-between;
+
+        >li {
+            width: 310px;
+            height: 120px;
+            border-radius: 4px;
+
+            &:nth-child(4n+1) {
+                background-color: #70C3FF;
+                transition: background-color .3s;
+
+                &:hover {
+                    background-color: #70C3FF;
+                }
+            }
+
+            &:nth-child(4n+2) {
+                background-color: #FD6A7F;
+            }
+
+            &:nth-child(4n+3) {
+                background-color: #7F8EA0;
+            }
+
+            &:nth-child(4n+4) {
+                background-color: #89D04F;
+            }
+
+            a {
+                display: flex;
+                height: 100%;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .round-bg {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            .text-area {
+                color: $white;
+                margin-left: 12px;
+                max-width: 140px;
+                @include text-truncate();
+            }
+
+            .title {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+
+            .desc {
+                display: block;
+                font-size: 14px;
+            }
+        }
+    }
+}

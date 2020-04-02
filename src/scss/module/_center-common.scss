@@ -1,0 +1,234 @@
+.manager-center-block {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 60px;
+
+    .container,
+    .container-small {
+        display: flex;
+    }
+
+    .left-block {
+        width: 230px;
+        margin-right: 20px;
+    }
+
+    .right-block {
+        flex: 1;
+    }
+
+}
+
+.t-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    width: 100%;
+    height: 260px;
+    padding-top: 35px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 4px;
+
+    .t-avater {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+    }
+
+    .info {
+        display: flex;
+        margin-top: 16px;
+        margin-bottom: 8px;
+
+        >span {
+            font-size: 14px;
+            color: $gray-33;
+        }
+
+        .name {
+            display: inline-block;
+            padding-right: 2px;
+            max-width: 80px;
+            @include text-truncate();
+        }
+
+        .idnum {
+            color: #999;
+            margin-right: 7px;
+            display: inline-block;
+            max-width: 90px;
+            @include text-truncate();
+        }
+    }
+
+    .vip-lists {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        >a{
+            display: inline-block;        
+            margin: 0 4px;
+        }
+    }
+
+    .btn-solid {
+        margin: 0 auto;
+        width: 170px;
+        height: 36px;
+        line-height: 36px;
+        @include solidBtn($primary-color, 4px, #333);
+        font-size: 14px;
+        @include animHover();
+        display: inline-block;
+    }
+
+    .vip-icon {
+        display: inline-block;
+        width: 20px;
+        height: 21px;
+        margin: 0 4px;
+        background: url('#{$img-dev-url}user/vip-all.png') no-repeat center;
+    }
+    %icon{
+        display: inline-block;
+        width: 21px;
+        height: 15px;
+        margin: 0 4px;
+    }
+    .vip-un-icon{
+        @extend %icon;
+        background: url('#{$img-dev-url}user/vip-un.png') no-repeat center;
+    }
+    .vip-ds-icon{
+        @extend %icon;
+        background: url('#{$img-dev-url}user/vip-ds.png') no-repeat center;
+    }
+    .vip-ui-icon{
+        @extend %icon;
+        background: url('#{$img-dev-url}user/vip-ui.png') no-repeat center;
+    }
+    .vip-soft-icon{
+        @extend %icon;
+        background: url('#{$img-dev-url}user/vip-soft.png') no-repeat center;
+    }
+    .vip-sn-icon{
+        @extend %icon;
+        background: url('#{$img-dev-url}user/vip-sn.png') no-repeat center;
+    }
+
+
+}
+
+.left-nav {
+    margin-top: 20px;
+    width: 100%;
+    padding: 27px 0;
+    background-color: #fff;
+
+    .module-ul {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+
+        >li {
+            height: 30px;
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: #333;
+                height: 100%;
+                padding-left: 30px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .active {
+            // background-color: #FEF5F0;
+
+            border-left: 3px solid $primary-color;
+
+            a {
+                font-weight: bold;
+            }
+
+
+        }
+    }
+
+}
+
+// 右侧课程管理
+.nav-type-content {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.right-nav {
+    padding: 30px 0 0 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+
+    >li {
+        margin-right: 38px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            display: block;
+            color: #999;
+            height: 100%;
+            padding: 0 2px 24px 2px;
+            font-size: 16px;
+
+        }
+
+        >hr {
+            width: 0;
+            height: 2px;
+            border: none;
+            border-radius: 1px;
+            position: relative;
+            background-color: #333;
+            margin: 0 auto;
+            transition: width 0.3s ease;
+        }
+
+        .title {
+            display: inline-block;
+            font-size: 16px;
+            color: #333;
+            padding-bottom: 24px;
+        }
+
+        .tips {
+            font-size: 14px;
+            color: #999;
+            margin-left: 20px;
+
+            em {
+                margin-left: 2px;
+                color: #FFA900;
+            }
+        }
+    }
+
+    .active {
+        a {
+            color: #333;
+        }
+
+        hr {
+            width: 100%;
+        }
+    }
+}

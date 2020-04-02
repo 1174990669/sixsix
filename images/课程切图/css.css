@@ -1,0 +1,52 @@
+.bg-icon播放 {
+    width: 12px; height: 12px;
+    background: url('css_sprites.png') -105px -10px;
+}
+
+x
+.bg-icon_配套练习题 {
+    width: 39px; height: 32px;
+    background: url('css_sprites.png') -10px -10px;
+}
+
+x
+.bg-icon_入群交流__交互 {
+    width: 14px; height: 12px;
+    background: url('css_sprites.png') -10px -62px;
+}
+
+x
+.bg-icon_入群交流 {
+    width: 14px; height: 12px;
+    background: url('css_sprites.png') -44px -62px;
+}
+
+x
+.bg-icon_添加图片 {
+    width: 16px; height: 13px;
+    background: url('css_sprites.png') -69px -10px;
+}
+
+x
+.bg-icon_下拉_拷贝_2 {
+    width: 13px; height: 7px;
+    background: url('css_sprites.png') -10px -94px;
+}
+
+x
+.bg-icon_下拉_拷贝_3 {
+    width: 13px; height: 7px;
+    background: url('css_sprites.png') -43px -94px;
+}
+
+x
+.bg-icon_下拉 {
+    width: 13px; height: 7px;
+    background: url('css_sprites.png') -76px -94px;
+}
+
+x
+.bg-icon_下拉_交互 {
+    width: 13px; height: 7px;
+    background: url('css_sprites.png') -137px -10px;
+}

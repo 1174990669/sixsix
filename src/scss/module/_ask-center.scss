@@ -1,0 +1,280 @@
+.ask-lists-block {
+    padding-bottom: 50px;
+
+    .pagination {
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+}
+
+.ask-list-wrap {
+    padding: 0 30px;
+}
+
+.ask-item {
+    padding: 40px 0 30px 0px;
+    border-bottom: 1px solid #F4F4F4;
+    display: flex;
+    align-items: flex-start;
+
+    .left-lable {
+
+        width: 44px;
+        height: 44px;
+        background-color: $primary-color;
+        border-radius: 4px;
+        text-align: center;
+
+        .number {
+            text-align: center;
+            padding-top: 5px;
+
+            >span {
+                display: block;
+
+                &:first-child {
+                    font-size: 14px;
+                }
+
+                &:last-child {
+                    font-size: 12px;
+                }
+            }
+
+        }
+
+        .adopt-icon {
+            display: inline-block;
+            margin-top: 10px;
+            width: 19px;
+            height: 25px;
+            background: url(#{$img-dev-url}user/user-sp.png) -49px -58px;
+        }
+    }
+
+    .comm-container {
+        flex: 1;
+        margin-left: 20px;
+
+
+        .head {
+            display: flex;
+            align-items: center;
+
+            >h3 {
+                font-size: 16px;
+                color: #333;
+                margin-right: 20px;
+                max-width: 710px;
+                @include text-truncate();
+            }
+
+            >span {
+                font-size: 14px;
+                color: #999;
+            }
+
+            %bg-style {
+                margin-left: 5px;
+                padding: 2px 5px;
+                font-size: 12px;
+                border-radius: 4px;
+                color: #fff;
+            }
+
+            .zd-color {
+                @extend %bg-style;
+                background-color: #19B955;
+
+            }
+
+            .lb-color {
+                @extend %bg-style;
+                background-color: #fda333;
+            }
+        }
+
+        .user-text {
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+
+            .info {
+                margin-right: 15px;
+
+                >img {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+
+                >span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: #999;
+                    font-size: 12px;
+                }
+            }
+
+            .lable {
+                margin-right: 15px;
+                padding: 2px 7px;
+                font-size: 12px;
+                color: #999;
+                border-radius: 2px;
+                background-color: #f6f6f6;
+            }
+
+            .right-float {
+                text-align: right;
+                flex: 1;
+                font-size: 14px;
+                color: #999;
+                align-self: flex-end;
+
+                >span {
+                    color: #FF4A3B;
+                }
+            }
+
+        }
+
+        .answer-content {
+            position: relative;
+            background-color: #f6f6f6;
+            margin-top: 20px;
+            padding: 20px 18px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-size: 14px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-top-width: 10px;
+                border-bottom-width: 10px;
+                border-left-width: 8px;
+                border-right-width: 8px;
+                color: #fff;
+                border-bottom-color: #f6f6f6;
+                top: -20px;
+                left: 0;
+                margin-left: 24px;
+
+            }
+
+
+            >h3 {
+                line-height: 1;
+                color: #333;
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .answer-text {
+                font-size: 14px;
+                word-break: break-all;
+                color: $gray-99;
+            }
+        }
+    }
+
+    .opt-block {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 14px;
+        color: #999;
+        // >span{
+        //     line-height: 1;
+        // }
+        .update {
+            margin-right: 30px;
+            cursor: pointer;
+
+            &:hover {
+                color: #FFA900;
+
+                .up-icon {
+                    background: url(#{$img-dev-url}user/user-sp.png) -10px -143px;
+                }
+            }
+        }
+
+        %icon-style {
+            margin-right: 6px;
+            margin-top: -4px;
+            display: inline-block;
+            vertical-align: middle;
+            align-self: center;
+            width: 15px;
+            height: 15px;
+        }
+
+        .up-icon {
+            @extend %icon-style;
+            background: url(#{$img-dev-url}user/user-sp.png) -145px -80px;
+        }
+
+        .good {
+            margin-right: 30px;
+            cursor: pointer;
+
+            &:hover {
+                color: #FFA900;
+
+                .good-icon {
+                    background: url(#{$img-dev-url}user/user-sp.png) -10px -108px;
+                }
+            }
+        }
+
+        .good-icon {
+            @extend %icon-style;
+            background: url(#{$img-dev-url}user/user-sp.png) -100px -47px;
+        }
+
+        .bad {
+            margin-right: 30px;
+
+            &:hover {
+                color: #FFA900;
+
+                .bad-icon {
+                    background: url(#{$img-dev-url}user/user-sp.png) -80px -108px;
+                }
+            }
+        }
+
+        .bad-icon {
+            @extend %icon-style;
+            background: url(#{$img-dev-url}user/user-sp.png) -45px -108px;
+        }
+
+        .total {
+            margin-right: 30px;
+
+            &:hover {
+                color: #FFA900;
+
+                .total-icon {
+                    background: url(#{$img-dev-url}user/user-sp.png) -145px -45px;
+                }
+            }
+        }
+
+        .total-icon {
+            @extend %icon-style;
+            background: url(#{$img-dev-url}user/user-sp.png) -145px -10px;
+        }
+
+    }
+}

@@ -1,0 +1,945 @@
+body,
+html {
+    background-color: transparent;
+}
+
+.login-dialog {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 750px;
+    height: 490px;
+    border-radius: 4px;
+    background-color: #fff;
+
+    .normal-imgs {
+        width: 350px;
+        height: 490px;
+    }
+
+    .login-container {
+        width: 400px;
+        height: 490px;
+        padding: 0 30px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+}
+
+.normal-imgs {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.left-img-wrapper {
+    display: inline-block;
+    width: 350px;
+    height: 490px;
+    padding: 73px 0 0 71px;
+    box-sizing: border-box;
+
+    .title-logo {
+        width: 103px;
+        height: 36px;
+        overflow: hidden;
+        margin-bottom: 18px;
+
+        >img {
+            max-width: 100%;
+        }
+    }
+
+    .list-txt {
+        font-size: 14px;
+        color: #836911;
+    }
+}
+
+.list-txt {
+    >li {
+        padding: 10px 0;
+        line-height: 22px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .slideDown {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        animation: slideDown .5s ease-in-out 0s both;
+    }
+
+    .t-gou {
+        display: inline-block;
+        margin-right: 10px;
+        width: 12px;
+        height: 10px;
+        background: url(#{$img-dev-url}dialog/dialog-gou.png);
+    }
+
+    .delay5 {
+        animation-delay: .5s;
+    }
+
+    .delay10 {
+        animation-delay: 1.0s;
+    }
+
+    .delay15 {
+        animation-delay: 1.5s;
+    }
+
+    .delay20 {
+        animation-delay: 2s;
+    }
+}
+
+.login-container {
+    position: relative;
+
+    .switch-way {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 43px;
+        height: 41px;
+
+        &.other {
+
+            .code-way-icon {
+                opacity: 0;
+            }
+
+            .account-way-icon {
+                opacity: 1;
+            }
+        }
+
+        >span {
+            display: block;
+        }
+    }
+
+    .code-way-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 43px;
+        height: 41px;
+        background: url(#{$img-dev-url}dialog/icon-wechat.png) no-repeat center;
+        background-size: 100% 100%;
+        opacity: 1;
+        transition: all 0.5s ease-in-out 0s;
+        cursor: pointer;
+    }
+
+    .account-way-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 41px;
+        background: url(#{$img-dev-url}dialog/icon-account.png) no-repeat center;
+        opacity: 0;
+        transition: all 0.5s ease-in-out 0s;
+    }
+}
+
+.login-header {
+    padding-top: 15px;
+    border-bottom: 1px solid #eee;
+
+    >ul {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 55px;
+        line-height: 55px;
+
+        width: 108px;
+        justify-content: space-between;
+
+        >li {
+            font-size: 16px;
+            color: #999;
+            padding: 0 2px;
+
+            cursor: pointer;
+
+            a {
+                font-size: 16px;
+                color: #999;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .active {
+            a {
+                color: #333;
+            }
+
+            // .nav-slide-bar {
+            //     left: 73px;
+            //     top: 53px;
+            //     opacity: 1;
+            //     width: 52px;
+            // }
+        }
+
+        .nav-slide-bar {
+            height: 2px;
+            width: 0;
+            background: #333;
+            position: absolute;
+            opacity: 0;
+            transition: all .5s;
+            border-radius: 1px;
+
+        }
+    }
+}
+
+.tel-login-content {
+    padding: 20px 0 0 0;
+
+    .other-login-block {
+        margin-top: 38px;
+    }
+}
+
+.login-form {
+    .item-input {
+        position: relative;
+        margin-top: 20px;
+        width: 340px;
+        height: 42px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+
+        >input {
+            &:focus {
+                background-color: #fff;
+            }
+        }
+
+        .intl-tel-input {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-tel {
+            flex: 1;
+            height: 100%;
+            padding: 0 20px;
+            background-color: #eee;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #333;
+
+            &:focus {
+                background-color: #fff;
+            }
+        }
+
+        .input-pwd {
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        .eye-icon {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            margin-top: -8px;
+            right: 20px;
+            cursor: pointer;
+            background: url(#{$img-dev-url}dialog/pwd-hidden.png) no-repeat center;
+
+            &.show {
+                background: url(#{$img-dev-url}dialog/pwd-show.png) no-repeat center;
+            }
+        }
+
+        .get-code-wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .input-code {
+            width: 231px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            border: none;
+            color: #333;
+            font-size: 14px;
+
+        }
+
+        .btn-get {
+            display: inline-block;
+            width: 110px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #eee;
+            color: #999;
+            cursor: pointer;
+            transition: color .3s;
+
+            &.active,
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+
+    .login-operation {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #999;
+
+        .login-tips {
+            cursor: pointer;
+
+            >a {
+                font-size: 14px;
+                color: inherit;
+            }
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .login-yzm-voice {
+            font-size: 14px;
+            color: #999;
+
+            .yzm-voice-1 {
+                display: block;
+
+                >span {
+                    color: #FFA900;
+                    cursor: pointer;
+                }
+            }
+
+            .yzm-voice-2 {
+                display: none;
+            }
+
+            .sendYzmvoice {
+                color: #FFA900;
+            }
+        }
+
+
+    }
+
+    .login-btn {
+        margin-top: 26px;
+
+        .login-a {
+            width: 340px;
+            height: 42px;
+            line-height: 42px;
+            background-color: #FFE300;
+
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            color: #333;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all .3s;
+
+            // &:hover,
+            &.login-btn-active {
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+.other-login-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tips {
+        font-size: 14px;
+        color: #999;
+    }
+
+    .way-lists {
+        margin-top: 18px;
+        margin-bottom: 13px;
+
+        .wechat-login {
+            margin: 0 15px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url(#{$img-dev-url}dialog/login-sprite.png) -70px -70px;
+            cursor: pointer;
+
+            &:hover {
+                background: url(#{$img-dev-url}dialog/login-sprite.png) -10px -10px;
+            }
+        }
+
+        .qq-login {
+            margin: 0 15px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url(#{$img-dev-url}dialog/login-sprite.png) -70px -10px;
+            cursor: pointer;
+
+            &:hover {
+                background: url(#{$img-dev-url}dialog/login-sprite.png) -10px -70px;
+            }
+        }
+    }
+
+    .bottom {
+        font-size: 12px;
+        color: #999;
+
+        >a {
+            display: inline-block;
+            color: #999;
+            transition: color .3s;
+
+            &:hover {
+                color: $a-hover;
+            }
+        }
+    }
+
+}
+
+.qrcode-login-content {
+    padding: 40px 0 0 0;
+
+    .qrcode-block {
+        display: block;
+        text-align: center;
+
+        >p {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #333;
+            line-height: 22px;
+        }
+        .w-tips{
+            >i{
+                display: inline-block;
+                width: 18px;
+                height: 15px;
+                margin-right: 3px;
+                vertical-align: middle;
+                background: url(#{$img-dev-url}dialog/wechat.png);
+            }
+        }
+    }
+
+    .way-lists {
+        margin-top: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .a-text {
+            font-size: 14px;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .vertical-line {
+            display: inline-block;
+            margin: 0 15px;
+            width: 2px;
+            height: 15px;
+            background-color: #999;
+        }
+    }
+
+    .bottom {
+        margin-top: 29px;
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+        >a {
+            display: inline-block;
+            color: #999;
+            transition: color .3s;
+
+            &:hover {
+                color: $a-hover;
+            }
+        }
+    }
+}
+
+.login-qrcode-wrap {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+
+    >img {
+        display: block;
+        width: 190px;
+        height: 190px;
+    }
+}
+
+.tel-register-content {
+    padding: 20px 0 0 0;
+
+    .other-tips-block {
+        display: block;
+        text-align: center;
+        margin-top: 70px;
+
+        >p {
+            font-size: 12px;
+            color: #999;
+
+            >a {
+                display: inline-block;
+                color: #999;
+                transition: color .3s;
+
+                &:hover {
+                    color: $a-hover;
+                }
+            }
+        }
+    }
+}
+
+.bind-form,
+.register-form {
+    .item-input {
+        position: relative;
+        margin-top: 20px;
+        width: 340px;
+        height: 42px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+
+        >input {
+            &:focus {
+                background-color: #fff;
+            }
+        }
+
+        .intl-tel-input {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-tel {
+            flex: 1;
+            height: 100%;
+            padding: 0 20px;
+            background-color: #eee;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #333;
+
+            &:focus {
+                background-color: #fff;
+            }
+        }
+
+        .get-code-wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .input-code {
+            width: 231px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            border: none;
+            color: #333;
+            font-size: 14px;
+
+        }
+
+        .btn-get {
+            display: inline-block;
+            width: 110px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #eee;
+            color: #999;
+            cursor: pointer;
+            transition: color .3s;
+
+            &.active,
+            &:hover {
+                color: #333;
+            }
+        }
+
+        .input-pwd {
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        .eye-icon {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            margin-top: -8px;
+            right: 20px;
+            cursor: pointer;
+            background: url(#{$img-dev-url}dialog/pwd-hidden.png) no-repeat center;
+
+            &.show {
+                background: url(#{$img-dev-url}dialog/pwd-show.png) no-repeat center;
+            }
+        }
+    }
+
+    .login-yzm-voice {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #999;
+
+        .yzm-voice-1 {
+            display: block;
+
+            >span {
+                color: #FFA900;
+                cursor: pointer;
+            }
+        }
+
+        .yzm-voice-2 {
+            display: none;
+        }
+
+        .sendYzmvoice {
+            color: #FFA900;
+        }
+    }
+
+    .login-yzm-voice-display {
+        display: none;
+    }
+
+    .register-btn {
+        margin-top: 26px;
+
+        .register-a {
+            width: 340px;
+            height: 42px;
+            line-height: 42px;
+            //background-color: $primary-color;
+            background-color: #FFE300;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            color: #333;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all .3s;
+
+            // &:hover,
+            &.login-btn-active {
+                background-color: $primary-color;
+            }
+        }
+    }
+
+}
+
+// 绑定
+.bind-tel-content {
+    padding-top: 20px;
+
+    .bind-btn {
+        margin-top: 28px;
+
+        .bind-a {
+            width: 340px;
+            height: 42px;
+            line-height: 42px;
+            background-color: #FFE300;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            color: #333;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all .3s;
+
+            // &:hover,
+            &.login-btn-active {
+                background-color: $primary-color;
+            }
+
+
+        }
+    }
+}
+
+.bind-header-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+
+    .title {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .skip-btn {
+        font-size: 14px;
+        color: #999;
+        cursor: pointer;
+    }
+
+    .back-icon {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        background: url(#{$img-dev-url}dialog/back-icon.png) no-repeat center;
+        cursor: pointer;
+
+        &:hover {
+            background: url(#{$img-dev-url}dialog/back-hover-icon.png) no-repeat center;
+        }
+    }
+}
+
+.set-success-container {
+    width: 400px;
+    height: 490px;
+    padding: 87px 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+
+    .success-icon {
+        display: inline-block;
+        width: 158px;
+        height: 137px;
+        background: url(#{$img-dev-url}dialog/success-icon.png) no-repeat center;
+    }
+
+    >h2 {
+        line-height: 1;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #000;
+    }
+
+    >p {
+        line-height: 1;
+        font-size: 14px;
+        color: #999;
+    }
+
+    .wrap-btn {
+        margin-top: 60px;
+
+        .btn-a {
+            width: 340px;
+            height: 42px;
+            line-height: 42px;
+            background-color: $primary-color;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            color: #333;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                background-color: #FFE300;
+            }
+
+
+
+        }
+    }
+}
+
+.skip-tips-dialog {
+    width: 270px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 44px 0;
+    text-align: center;
+    box-sizing: border-box;
+
+    >h3 {
+        font-size: 16px;
+        color: #333;
+        line-height: 1;
+    }
+
+    .btn-group {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn-gray {
+            width: 80px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 0 10px;
+            background-color: #eee;
+            font-size: 14px;
+            color: #999;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                background-color: rgba($color: #eee, $alpha: 0.8);
+            }
+        }
+
+        .btn-solid {
+            width: 80px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 0 10px;
+            background-color: $primary-color;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                background-color: rgba($color: $primary-color, $alpha: 0.8);
+            }
+        }
+    }
+}
+
+
+//区号样式重写start
+.intl-tel-input .selected-flag .iti-flag {
+    display: none;
+}
+
+.intl-tel-input .country-list {
+    padding-bottom: 21px;
+}
+
+.intl-tel-input.allow-dropdown .flag-container:hover .selected-flag {
+    background-color: #eee;
+}
+
+.intl-tel-input.separate-dial-code.allow-dropdown .selected-flag {
+    width: 80px !important;
+    background-color: #eee;
+    display: inline-block;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.intl-tel-input .selected-flag {
+    padding: 0;
+    text-align: center;
+}
+
+.intl-tel-input.allow-dropdown .selected-flag,
+.intl-tel-input.separate-dial-code .selected-flag {
+    border-right: none;
+}
+
+.intl-tel-input .selected-flag .iti-arrow {
+    border-top: 5px solid #999;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    right: 12px;
+}
+
+.intl-tel-input .flag-container {
+    padding: 0;
+    border: none;
+    // border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.intl-tel-input.separate-dial-code .selected-dial-code {
+    padding: 0;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: -20px;
+    line-height: 42px;
+}
+
+.intl-tel-input.separate-dial-code.allow-dropdown input,
+.intl-tel-input.separate-dial-code.allow-dropdown input[type=text] {
+    padding-left: 20px !important;
+    padding-right: 20px;
+    margin-left: 80px !important;
+    border: none;
+    box-sizing: border-box;
+
+}
+
+//区号样式重写end

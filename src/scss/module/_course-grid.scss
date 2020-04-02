@@ -1,0 +1,396 @@
+//颜色
+$pay-label-color: #fd583f;
+$limit-free-color: #608fed;
+$price-num-color: #F0564F;
+
+$coverArr: #B53AF0#55D38E#416FC9#3BC493#EC5C6E#7A66E7#EB3040#F86688#FFA763#6B87F4;
+$coverShadowArr: #C254EE #53D393 #5073D0 #149CEE #F8A36E #816AE9 #ED3E4D #ED3E4D #FFAD7C #6887F1;
+
+//常量
+$warp-width: 1320px;
+$box-width: 310px;
+$box-height: 319px;
+// $cover-height: 235px;
+$cover-height: 220px;
+
+@mixin courseBox() {
+
+    @content;
+}
+
+//大的课程
+.soft-course {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .course-wrap {
+        @include clearfix();
+        //width: 1320px;
+        margin-left: -20px;
+    }
+}
+
+.course-wrap {
+    >li {
+        width: $box-width;
+        height: auto;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        // box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.06);
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+        float: left;
+        margin-left: 20px;
+        margin-bottom: 18px;
+        font-size: 14px;
+        // transition: box-shadow .3s;
+        transition: all .3s;
+
+        &:hover {
+            box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.1);
+
+            // transform: scale(1.07);
+            // .cover-img{
+            //     .hover-wrap{
+            //         opacity: 1;
+            //     }
+            // }
+            .course-info {
+                .title {
+                    color: $primary-color;
+                }
+
+                .label-group {
+                    .lv-label {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+        }
+
+        .item-link {
+            font-size: 14px;
+        }
+
+        .cover-img {
+            width: $box-width;
+            height: $cover-height;
+            overflow: hidden;
+            position: relative;
+
+            /* border-radius: 4px 4px 0 0; */
+            &:hover {
+                .main-course-img {
+                    transform: scale(1.1);
+                }
+
+                .hover-wrap {
+                    opacity: 1;
+                }
+            }
+
+            .main-course-img {
+                display: block;
+                width: $box-width;
+                height: $cover-height;
+                transition: all 0.5s;
+                pointer-events: none;
+            }
+
+            .hover-wrap {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                z-index: 11;
+                height: $cover-height;
+                line-height: $cover-height;
+                text-align: center;
+                @include transition-all(all, 500ms, ease-out);
+                box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.06);
+                border-radius: 4px 4px 0px 0px;
+                background-color: rgba(0, 0, 0, 0.5);
+
+                .icon-play {
+                    vertical-align: middle;
+                    background: url(#{$img-dev-url}index_css_sprites.png) -10px -10px;
+                    display: inline-block;
+                    width: 57px;
+                    height: 57px;
+                }
+            }
+
+            .label {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-size: 12px;
+                height: 24px;
+                text-align: center;
+                line-height: 24px;
+                padding: 0 6px;
+                color: rgba($white, 0.8);
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+
+        }
+
+        .course-info {
+            padding: 13px 15px;
+            @include prefix-css(box-sizing, border-box);
+
+            .title {
+                cursor: pointer;
+                max-width: 280px;
+                display: inline-block;
+                @include text-truncate();
+                font-size: 14px;
+                color: $gray-33;
+                transition: all 0.3s;
+
+                // &:hover {
+                //     color: $primary-color;
+                // }
+            }
+
+            .title-double {
+                cursor: pointer;
+                max-width: 280px;
+                display: inline-block;
+                @include line-clamp(2);
+                max-height: 50px;
+                line-height: 22px;
+                font-size: 15px;
+                color: $gray-33;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            .label-group {
+                margin-top: 8px;
+                font-size: 0;
+                height: 19px;
+
+                %label-style {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 0 5px;
+                    font-size: 12px;
+                    color: $white;
+                    height: 19px;
+                    line-height: 19px;
+                    background-color: $primary-color;
+                    border-radius: 2px;
+                    margin-right: 10px;
+                }
+
+                .vip-label {
+                    @extend %label-style;
+                    background-color: $primary-color;
+                }
+
+                .pay-label {
+                    @extend %label-style;
+                    background-color: $pay-label-color;
+                }
+
+                .limit-free-label {
+                    @extend %label-style;
+                    background-color: $limit-free-color;
+                }
+
+                .lv-label {
+                    font-size: 12px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: $gray-99;
+                    padding-right: 6px;
+                    position: relative;
+                    margin-right: 6px;
+                    transition: all 0.3s;
+
+                    //border-right: 1px solid #B4B3B3;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 4px;
+                        width: 1px;
+                        height: 10px;
+                        background-color: #B4B3B3;
+
+                    }
+
+                    &:last-of-type() {
+                        &::after {
+                            width: 0;
+                        }
+                    }
+
+                }
+
+                .right-red {
+                    font-size: 14px;
+                    float: right;
+                    display: inline-block;
+                    color: $price-num-color;
+                }
+
+                .right-green {
+                    font-size: 14px;
+                    float: right;
+                    display: inline-block;
+                    color: $primary-color;
+                }
+
+                .right-ms {
+                    font-size: 14px;
+                    float: right;
+                    margin-top: -3px;
+                    display: inline-block;
+                    color: $price-num-color;
+
+                    >b {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .textarea-author {
+                margin-top: 19px;
+
+                .teacher {
+                    float: left;
+                    font-size: 0;
+
+                    &:hover {
+                        .author-name {
+                            color: $primary-color;
+                        }
+                    }
+
+                    >img {
+                        @include roundImg(22px);
+                        margin-right: 8px;
+                        vertical-align: middle;
+                        display: inline-block;
+                    }
+
+                    .author-name {
+                        font-size: 12px;
+                        vertical-align: middle;
+                        display: inline-block;
+                        color: $gray-99;
+                    }
+                }
+
+                .prices-num {
+                    float: right;
+                    font-size: 18px;
+                    color: $price-num-color;
+                }
+
+                .numbers {
+                    float: right;
+                    font-size: 12px;
+                    color: $gray-99;
+                }
+            }
+        }
+
+
+    }
+
+    .more-link {
+        font-size: 14px;
+        width: $box-width;
+        height: auto;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        margin-bottom: 18px;
+        font-size: 14px;
+
+    }
+
+    %bg-cover {
+        background-size: 100% 100%;
+        width: 310px;
+        height: 337px;
+    }
+
+    .cover-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 55px;
+        box-sizing: border-box;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        >h2 {
+            color: $white;
+            font-size: 34px;
+            font-weight: bold;
+            // text-shadow: 0px 3px 3px rgba(83, 211, 147, 0.3);
+        }
+
+        .sort {
+            font-size: 22px;
+            color: $white;
+            margin-top: 18px;
+            margin-bottom: 24px;
+        }
+
+        .horizon-line {
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            opacity: 0.6;
+        }
+
+        .btn-more {
+            margin-top: 68px;
+            @include solidBtn($white, 19px, $gray-99);
+            width: 120px;
+            height: 38px;
+            line-height: 38px;
+            display: inline-block;
+            font-size: 16px;
+            vertical-align: middle;
+            transition: all .3s;
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+            @include animHover();
+        }
+    }
+
+    @for $i from 1 to 11 {
+        .bg-cover#{$i} {
+            background: url('#{$img-dev-url}zixue2.1/cover-bg'+ '#{$i}.png') no-repeat center;
+            @extend %bg-cover;
+
+            .btn-more {
+                color: nth($coverArr, $i);
+            }
+
+            >h2 {
+                text-shadow: 0px 3px 3px rgba(nth($coverShadowArr, $i), 0.3);
+            }
+        }
+    }
+
+}
